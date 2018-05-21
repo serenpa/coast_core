@@ -33,8 +33,8 @@ setup_requirements = [ ]
 test_requirements = [ ]
 
 setup(
-    author="Yann Le Norment",
-    author_email='yann.lenorment@gmail.com',
+    author="Ashley Williams",
+    author_email='ashley.williams@pg.canterbury.ac.nz',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -58,7 +58,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/YannLeNorment/coast_core',
+    url='https://github.com/zedrem/coast_core',
     version='0.1.0',
     zip_safe=False,
 )
