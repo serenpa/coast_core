@@ -11,7 +11,22 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ ]
+requirements = [
+    'pymongo',
+    'RandomWords',
+    'google-api-python-client',
+    'urllib3',
+    'certifi',
+    'pattern3',
+    'bs4',
+    'textstat',
+    'language_check',
+    'nltk',
+    'numpy',
+    'textblob',
+    'docopt',
+    'langdetect'
+]
 
 setup_requirements = [ ]
 

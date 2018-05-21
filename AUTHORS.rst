@@ -2,12 +2,14 @@
 Credits
 =======
 
-Development Lead
-----------------
+Maintainer
+----------
 
-* Yann Le Norment <yann.lenorment@gmail.com>
+* Ashley Williams <ashley.williams@pg.canterbury.ac.nz>
 
 Contributors
 ------------
 
-None yet. Why not be the first?
+* Yann Le Norment  <yann.lenorment@canterbury.ac.nz>
+
+Want to contribute? See: CONTRIBUTING.rst
