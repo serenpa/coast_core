@@ -15,7 +15,7 @@
 try:
     from urllib.parse import urlparse
 except ImportError:
-     from urlparse import urlparse
+    from urlparse import urlparse
 
 from bs4 import BeautifulSoup
 import sys
@@ -126,7 +126,6 @@ def classify_citations(external_uris, classification_config_file):
         })
 
     return classified_external_uris
-
 
 
 def compute_citation_binary_counts(classified_external_uris, classification_config_file):

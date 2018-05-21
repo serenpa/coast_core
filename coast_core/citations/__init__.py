@@ -74,7 +74,6 @@ def classify_citations(external_uris, classification_config_file):
     return c.classify_citations(external_uris, classification_config_file)
 
 
-
 def compute_citation_binary_counts(classified_external_uris, classification_config_file):
     """
         Take binary counts of each citation type.
@@ -91,7 +90,6 @@ def compute_citation_binary_counts(classified_external_uris, classification_conf
             classification type.
     """
     return c.compute_citation_binary_counts(classified_external_uris, classification_config_file)
-
 
 
 def execute_full_citation_analysis(html, link, classification_config_file):

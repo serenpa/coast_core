@@ -10,6 +10,7 @@ import nltk
 from nltk.util import ngrams
 from nltk import word_tokenize
 
+
 def import_punkt():
     """
         Import punkt
@@ -23,7 +24,7 @@ def import_punkt():
 def penn_treebank_filter(article_text, filter_list, exception_list=[]):
     """
         Returns a list of tuples that are tagged with any
-	    penn treebank tag from the filter list.
+        penn treebank tag from the filter list.
 
         Args:
             article_text: The text to analyse
