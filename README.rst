@@ -7,7 +7,7 @@ COAST_core
         :target: https://pypi.python.org/pypi/coast_core
 
 .. image:: https://img.shields.io/travis/zedrem/coast_core.svg
-        :target: https://travis-ci.org/zedrem/coast_core
+        :target: https://travis-ci.com/zedrem/coast_core
 
 .. image:: https://readthedocs.org/projects/coast-core/badge/?version=latest
         :target: https://coast-core.readthedocs.io/en/latest/?badge=latest
