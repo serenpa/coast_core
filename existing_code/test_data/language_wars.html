@@ -1,0 +1,50 @@
+<article id="post-549" class="post post-549 type-post status-publish format-standard hentry category-news">
+	<!-- Grab the featured image -->
+
+	<header class="entry-header">
+				<div class="entry-date">
+			<span class="posted-on"><a href="https://www.joelonsoftware.com/2006/09/01/language-wars/" rel="bookmark"><time class="entry-date published" datetime="2006-09-01T00:09:10+00:00">September 1, 2006</time></a></span><span class="byline"> by </span> <span class="author vcard"><a class="url fn n" href="https://www.joelonsoftware.com/author/joelonsoftware/">Joel Spolsky</a></span>		</div><!-- .entry-meta -->
+
+		<h1 class="entry-title">Language Wars</h1>	</header><!-- .entry-header -->
+
+
+<div class="entry-meta">
+
+	<ul class="meta-list">
+					<li class="meta-cat"><a href="https://www.joelonsoftware.com/category/news/" rel="category tag">News</a></li>
+									</ul>
+</div>
+
+	<div class="entry-content">
+		<p>An old friend emailed me to ask:</p>
+<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+<p>&#8220;I wanted to get your response to some basic questions concerning technologies available for creating an enterprise level application that is built upon a Web Server, Web based applications, and a large distribution model and collection model. The project is starting from scratch and so there is no legacy code involved but other than that I won&#8217;t bore you with the details&#8230;</p>
+</blockquote>
+<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+<p>&#8220;Would you head down the .NET route or J2EE?</p>
+<p>&#8220;Which Web Server (Apache, IIS, or something else) should we use and why?</p>
+<p>&#8220;Which Web development language (ASP.NET, Ruby, Ruby on Rails, Java, Python, etc.) would you recommend and why?</p>
+<p>&#8220;What do you use at your company and why?&#8221;</p>
+</blockquote>
+</blockquote>
+<p dir="ltr">Ah, an excellent question, simultaneously impossible to answer and very easy to answer! </p>
+<p dir="ltr">Sorry, I should stop speaking in riddles. A while ago I wrote an article called <a href="https://www.joelonsoftware.com/articles/LordPalmerston.html">Lord Palmerston on Programming</a>&nbsp;in which I claimed that some of these programming worlds, like .NET and Java, were so huge and complicated that you never could really tell if they were going to be good enough for your needs until it was too late. In particular, a debate between the C#/.NET/IIS stack and the Java/J2EE/Apache/Solaris stack and the PHP/Apache/Linux stack could go on and on for years and years and you&#8217;d never find the right answer. That&#8217;s because there are so many pros and cons of all these platforms that advocates of each side can debate and debate and never get any closer to the Truth, but it sure as heck is a fun debate.</p>
+<p dir="ltr">You might think that if you could find someone with extensive experience in multiple platforms, they would be the right person to ask. I haven&#8217;t found a lot of people like that. What I do know for sure, though, is two things:</p>
+<ol dir="ltr">
+<li>
+<div>People all over the world are constantly building web applications using .NET, using Java, and using PHP all the time. None of them are failing because of the choice of technology.</div>
+</li>
+<li>
+<div>All of these environments are large and complex and you really need at least one architect with serious experience developing for the one you choose, because otherwise you&#8217;ll do things wrong and wind up with messy code that needs to be restructured.</div>
+</li>
+</ol>
+<p>Last summer when we had a <a href="http://www.projectaardvark.com/">group of interns</a> build <a href="https://www.copilot.com/">Copilot</a>, we had to decide what language to use for new code. I know that typically on new projects there&#8217;s a long evaluation period where you decide what technology to use, along with lots of debates that include some crazy person actually wasting quite a lot of time evaluating <a href="http://www.squeak.org/">Squeak</a> and <a href="http://www.findinglisp.com/blog/2005/12/reddit-and-lisp-psychosis.html">Lisp</a> and&nbsp;<a href="http://www.cabochon.com/~stevey/blog-rants/more-ocaml.html">OCaml</a>&nbsp;and lots of other languages which are totally, truly brilliant programming languages worthy of great praise, but just don&#8217;t have the gigantic ecosystem you need around them if you want to develop web software. These debates are enormously fun and a total and utter waste of time, because the bottom line is that there are three and a half platforms (C#, Java, PHP, and a half Python) that are all equally likely to make you successful, an infinity of platforms where you&#8217;re pretty much guaranteed to fail spectacularly when it&#8217;s too late to change anything (Lisp, ISAPI DLLs written in C, Perl), and a handful of platforms where The Jury Is Not In, So Why Take The Risk When Your Job Is On The Line? (Ruby on Rails). Before you flame me, Ruby is a beautiful language and I&#8217;m sure you can have a lot of fun developing apps it in, and in fact if you want to do something non-mission-critical, I&#8217;m sure you&#8217;ll have a lot of fun, but for Serious Business Stuff you really must recognize that there just isn&#8217;t a lot of experience in the world building big mission critical web systems in Ruby on Rails, and I&#8217;m really not sure that you <em>won&#8217;t</em> hit scaling problems, or problems interfacing with some old legacy thingamabob, or problems finding programmers who can understand the code, or whatnot. So while Ruby on Rails is the <em>fun</em> answer and yes I&#8217;ve heard of 37 Signals and they&#8217;re making lovely Ruby on Rails apps, and making lots of money, but that&#8217;s not a <em>safe</em> choice for at least another year or six. I for one am scared of Ruby because (1) it displays a stunning antipathy towards&nbsp;<a href="https://www.joelonsoftware.com/articles/Unicode.html">Unicode</a> and (2) it&#8217;s known to be slow, so if you become The Next MySpace, you&#8217;ll be buying 5 times as many boxes as the .NET guy down the hall. Those things might eventually get fixed but for now, you can risk Ruby on your two-person dormroom startup or your senior project, not for enterprisy stuff where Someone is Going to Get Fired. Python get a half because it&#8217;s on the border, about to cross the line from an &#8220;interesting&#8221; choice to a &#8220;safe&#8221; choice. </p>
+<p>Oh and I know <a href="http://www.paulgraham.com/avg.html">Paul told you</a> that he made his app in Lisp and then he made millions of dollars because he made his app in Lisp, but honestly only&nbsp;<a href="http://www.reddit.com/">two people</a> ever believed him and, a complete rewrite later, they won&#8217;t make <em>that</em> mistake again.</p>
+<p>The safe answer, for the Big Enterprisy Thing where you have no interest in being on the cutting edge, is C#, Java, PHP, or Python, since there&#8217;s so much evidence that when it comes right down to it zillions of people are building huge business-critical things in those languages and while they may have problems, they&#8217;re not life-threatening problems.</p>
+<p>How do you decide between C#, Java, PHP, and Python? The only real difference is which one <em>you</em> know better. If you have a serious Java guru on your team who has build several large systems successfully with Java, you&#8217;re going to be a hell of a lot more successful with Java than with C#, not because Java is a better language (it&#8217;s not, but the differences are too minor to matter) but because he knows it better. Etc.</p>
+<p>What we ended up doing with the interns was just telling them that they had to build it in C# and ASP.NET. In particular, one intern, who wrote the website part of Copilot, had enough experience with ASP.NET to know what things to avoid (like viewstate) and knew to avoid the gotchas that make it impossible to have two &lt;forms&gt; in one page, etc. etc., so he did a beautiful job architecting the ASP.NET code exactly the right way to begin with so we didn&#8217;t get into trouble later. And the benefit was that not one minute was spent debating the merits of programming languages, a fruitless debate if I&#8217;ve ever seen one.</p>
+<p>Finally &#8212; as to what we use &#8212; Copilot is C# and ASP.Net, as I mentioned, although the Windows client is written in C++. Our older in-house code is VBScript and our newer in-house code is C#. <a href="http://www.fogcreek.com/FogBugz">FogBugz</a> is written in Wasabi, a very advanced, functional-programming dialect of Basic with closures and lambdas and Rails-like active records that can be compiled down to VBScript, JavaScript, PHP4 or PHP5. Wasabi is a private, in-house language written by one of our best developers that is optimized specifically for developing FogBugz; the Wasabi compiler itself is written in C#.</p>
+			</div><!-- .entry-content -->
+
+</article><!-- #post-## -->

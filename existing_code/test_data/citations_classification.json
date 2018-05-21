@@ -1,0 +1,13 @@
+{
+  "research": ["reseaerchgate", "ieee.", "dx.doi.", "acm", "sciencedirect"],
+  "research_search": ["googlescholar", "msacademic"],
+  "developer": ["msdn.", "developer."],
+  "education": [".edu", ".ac.", ".uni-"],
+  "news": ["huffingtonpost", "theverge", "theguardian", "usmagazine", "nytimes"],
+  "social_media": ["instagram", "facebook", "twitter", "linkedin", "youtube"],
+  "government": [".gov"],
+  "q_and_a": ["stackoverflow", "stackexchange", "quora", "yahooanswers"],
+  "repository": ["github", "bitbucket", "sourceforge", "googlecode"],
+  "sandbox": ["jsfiddle"],
+  "e_commerce": ["amazon", "ebay"]
+}
