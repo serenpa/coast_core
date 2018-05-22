@@ -15,10 +15,14 @@ from coast_core import utils
 
 class TestUtils(unittest.TestCase):
 
+    def setUp(self):
+        self.file = os.path.dirname(__file__) + "/test_data/language_wars.html"
+        self.config_file = os.path.dirname(__file__) + "/test_data/config_file.json"
+
     def test_get_from_file(self):
-        result = utils.get_from_file("test_data/language_wars.html")
+        result = utils.get_from_file(self.file)
         print("Full text", result)
 
     def test_get_json_from_file(self):
-        result = utils.get_json_from_file("test_data/config_file.json")
+        result = utils.get_json_from_file(self.config_file)
         print("\nJson", result)

@@ -16,12 +16,12 @@
 import sys
 from textstat.textstat import textstat
 import nltk
-import language_check
-import numpy as np
+try:
+    import language_check
+except:
+    import grammar_check
 from textblob import TextBlob
 from langdetect import detect
-
-from coast_core import utils
 
 
 def detect_language(text):
