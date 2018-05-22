@@ -11,3 +11,4 @@ numpy
 textblob
 docopt
 langdetect
+html5lib
