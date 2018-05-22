@@ -10,7 +10,6 @@ Tests for `extraction` module.
 import os
 import unittest
 
-from coast import utils
 from coast_core import extraction
 
 

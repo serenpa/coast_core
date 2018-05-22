@@ -7,6 +7,7 @@ python:
   - "pypy3"
 # commands to install dependencies
 install:
+  - "pip install 3to2"
   - "pip install ."
   - "pip install -r requirements.txt"
   # Needed to get six >=1.11.0 on Travis

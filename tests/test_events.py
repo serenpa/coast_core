@@ -20,6 +20,8 @@ class TestEvents(unittest.TestCase):
         self.file = open(os.path.dirname(__file__) + "/test_data/language_wars.html")
         self.html = self.file.read()
         self.classification_config_file = os.path.dirname(__file__) + "/test_data/citations_classification.json"
+        import nltk
+        nltk.download('punkt')
 
     def test_run_all_event(self):
         result = events.run_all_event_analysis(self.html)
