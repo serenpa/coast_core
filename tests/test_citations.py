@@ -39,7 +39,6 @@ class TestCitations(unittest.TestCase):
 
     def test_get_all_citations(self):
         result = citations.get_all_citations(self.html)
-        expected_result = self.all_uris
         print(result)
 
     def test_external_citations(self):

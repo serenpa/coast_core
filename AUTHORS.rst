@@ -11,6 +11,6 @@ Contributors
 ------------
 
 * Yann Le Norment  <yann.lenorment@canterbury.ac.nz>
-* Adrian Aucher
+* Adrien Aucher
 
 Want to contribute? See: CONTRIBUTING.rst
