@@ -13,13 +13,12 @@
     (<<link>>).
 """
 
-import sys
 from textstat.textstat import textstat
 import nltk
 try:
     import language_check
 except:
-    import grammar_check
+    import grammar_check as language_check
 from textblob import TextBlob
 from langdetect import detect
 
