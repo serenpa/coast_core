@@ -12,7 +12,6 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'pymongo',
     'RandomWords',
     'google-api-python-client',
     'urllib3',
@@ -28,9 +27,11 @@ requirements = [
     'langdetect'
 ]
 
-setup_requirements = [ ]
+setup_requirements = [
+]
 
-test_requirements = [ ]
+test_requirements = [
+]
 
 setup(
     author="Ashley Williams",
