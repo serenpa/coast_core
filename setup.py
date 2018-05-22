@@ -20,6 +20,7 @@ requirements = [
     'pattern3',
     'bs4',
     'textstat',
+    'language_check',
     'nltk',
     'numpy',
     'textblob',

@@ -10,7 +10,7 @@ Tests for `citations` module.
 import os
 import unittest
 
-from coast_core import citations, utils
+from coast_core import citations
 
 
 class TestCitations(unittest.TestCase):
@@ -40,6 +40,7 @@ class TestCitations(unittest.TestCase):
     def test_get_all_citations(self):
         result = citations.get_all_citations(self.html)
         expected_result = self.all_uris
+        print(result)
 
     def test_external_citations(self):
         result = citations.select_external_citations(self.link, self.all_uris)

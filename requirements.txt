@@ -6,6 +6,7 @@ pattern3
 bs4
 textstat
 nltk
+language-check
 numpy
 textblob
 docopt
