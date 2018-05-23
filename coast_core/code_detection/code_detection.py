@@ -8,6 +8,7 @@
 import json
 import sys
 import re
+import os
 
 
 def feature_detection(word):
@@ -15,7 +16,7 @@ def feature_detection(word):
     match_num = 0
 
     try:
-        with open("patterns.json") as patterns:
+        with open(os.path.dirname(__file__) + "/patterns.json") as patterns:
             features_file = json.load(patterns)
             for type, pattern in features_file.items():
                 matches = re.finditer(pattern, word)
@@ -33,7 +34,7 @@ def feature_detection(word):
 
     # Keywords
     try:
-        with open("keywords.txt") as keywords_file:
+        with open(os.path.dirname(__file__) + "/keywords.txt") as keywords_file:
             lines = keywords_file.readlines()
             for keyword in lines:
                 keyword = keyword.rstrip()
