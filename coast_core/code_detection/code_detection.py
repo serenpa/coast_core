@@ -3,7 +3,7 @@
 
     Author: Yann Le Norment
 
-    Description: Find code in articles
+    Description: Find code in texts
 """
 import json
 import sys
@@ -52,31 +52,41 @@ def feature_detection(word):
     return features
 
 
-def extract_features_from_article(article):
-
-    article_data = []
+def extract_features_from_text(text, print_results):
+    text_data = []
 
     total_char = 0
     total_words = 0
     total_lines = 0
 
     lines_data = []
-    lines = article.split('\n')
-    line_num = 0
+    lines = text.split('\n')
 
     for line in lines:
 
+        total_lines += 1
         words_data = []
         words = line.split()
 
         line_length_by_words = len(words)
         line_length_by_char = sum(len(word) for word in words)
 
+        try:
+            first_word = words[0]
+            last_word = words[line_length_by_words - 1]
+            first_char = first_word[0]
+            last_char = last_word[len(last_word) - 1]
+        except Exception as e:
+            first_word = str(e)
+            first_char = str(e)
+            last_word = str(e)
+            last_char = str(e)
+
         position = 0
         for word in words:
-
             word_data = []
             position += 1
+            total_char += len(word) + 1
             features = feature_detection(word)
             if features:
                 word_data.append({
@@ -89,137 +99,144 @@ def extract_features_from_article(article):
                     "word": word,
                     "position": position
                 })
+
             words_data.append(word_data)
-        total_words = position
+        total_words += position
 
-        try:
-            first_word = words_data[0]
-            first_char = list(first_word)[0]
-            last_word = words_data[line_length_by_words - 1]
-            last_char = list(last_word)[len(last_word) - 1]
+        lines_data.append({
+            "line_num": total_lines,
+            "line_length_by_words": line_length_by_words,
+            "line_length_by_char": line_length_by_char,
+            "first_word": first_word,
+            "first_char": first_char,
+            "last_word": last_word,
+            "last_char": last_char,
+            "words_data": words_data
+        })
+        if print_results:
+            print("line_num:", total_lines, "\nline_length words:", line_length_by_words,
+                  "\nline_length char:", line_length_by_char, "\nfirst word:", first_word,
+                  "\nfirst char", first_char, "\nlast_word:", last_word, "\nlast_char", last_char,
+                  "\n==========================")
 
-            lines_data.append({
-                "line_num": line_num,
-                "line_length_by_words": line_length_by_words,
-                "line_length_by_char": line_length_by_char,
-                "first_word": first_word,
-                "first_char": first_char,
-                "last_word": last_word,
-                "last_char": last_char,
-                "words": words_data
-            })
-        except Exception as e:
-            first_word = str(e)
-            first_char = str(e)
-            last_word = str(e)
-            last_char = str(e)
-
-            lines_data.append({
-                "line_num": line_num,
-                "line_length_by_words": line_length_by_words,
-                "line_length_by_char": line_length_by_char,
-                "first_word": first_word,
-                "first_char": first_char,
-                "last_word": last_word,
-                "last_char": last_char,
-                "words_data": words_data
-            })
-
-    article_data.append({
+    text_data.append({
         "total_char": total_char,
         "total_lines": total_lines,
         "total_words": total_words,
         "lines_data": lines_data
     })
+    if print_results:
+        print("Total char:", total_char, "\nTotal words:", total_words, "\nTotal lines:", total_lines)
 
-    return article_data
+    return text_data
 
 
-def binary_transformation(article_data):
-
-    lines_data = article_data['lines_data']
-
-    binary_article = ''
+def binary_transformation(text_data, print_results):
+    binary_text = ''
     binary_lines = []
 
-    for line in lines_data:
+    for data in text_data:
 
-        binary_line = ''
-
-        for words_data in line['words_data']:
-            for word in words_data:
-
+        for line in data['lines_data']:
+            binary_line = ''
+            for word in line['words_data']:
+                word = word[0]
                 # Default word value
-                word_value = '0'
-
-                if word['features']:
-                    word_value = '1'
-
+                word_value = ''
+                try:
+                    if word['features']:
+                        word_value = '1'
+                except:
+                    word_value = '0'
                 binary_line += word_value
+            # Default binary line value
+            binary_line_value = '0'
+            if '1' in binary_line:
+                binary_line_value = '1'
+            # Updating the list of lines in the text
+            binary_lines.append(binary_line)
+            # Updating the string which represent the text
+            binary_text += binary_line_value
+            if print_results:
+                print("Line num:", line['line_num'], "\nBinary line:", binary_line,
+                      "\n=======================")
+    return binary_text, binary_lines
 
-        # Default line value
-        binary_line_value = '0'
 
-        if '1' in binary_line:
-            binary_line_value = '1'
-        # Updating the list of lines in the article
-        binary_lines.append(binary_line_value)
-        # Updating the string which represent the article
-        binary_article += binary_line_value
-
-    return binary_article, binary_lines
-
-
-def absolute_transformation(article_data):
-
-    lines_data = article_data['lines_data']
-
-    absolute_article = ''
+def absolute_transformation(text_data, print_results):
     absolute_lines = []
 
-    for line in lines_data:
-
-        absolute_line = ''
-
-        for words_data in line['words_data']:
-            for word in words_data:
+    for data in text_data:
+        for line in data['lines_data']:
+            absolute_line = ''
+            absolute_line_value = 0
+            for word in line['words_data']:
+                word = word[0]
 
                 # Default word value
-                word_value = '0'
-                if word['features']:
-                    word_value = str(len(word['features']))
+                word_value = ''
 
+                try:
+                    if word['features']:
+                        word_value = str(len(word['features']))
+                except:
+                    word_value = '0'
                 absolute_line += word_value
-        # Default line value
-        absolute_line_value = '0'
+                absolute_line_value += int(word_value)
+            absolute_lines.append(absolute_line)
 
-        for num in absolute_line:
-            if num is not '0':
-                absolute_line_value += int(num)
-        # Updating the list of lines in the article
-        absolute_lines.append(absolute_line_value)
-        # Updating the string which represent the article
-        absolute_article += absolute_line_value
+            if print_results:
+                print("Line num:", line['line_num'], "\nAbsolute line:", absolute_line,
+                      "\nValue:", absolute_line_value, "\n=======================")
 
-    return absolute_article, absolute_lines
+    return absolute_lines
 
 
 def binary_code_percentage(binary_lines):
-
     code_presence = 0
     words_nb = 0
     percentage = None
 
     for line in binary_lines:
-        words_nb = len(line)
-        for i in range(0, words_nb):
+        words_nb += len(line)
+        for i in range(0, len(line)):
             if '0' in line:
                 pass
             if '1' in line:
                 code_presence += 1
 
-    if words_nb is not '0':
-        percentage = (code_presence / words_nb) * 100
-
+    percentage = (code_presence / words_nb) * 100
+    # print("Percentage", percentage)
     return percentage
 
+
+def absolute_code_percentage(absolute_lines):
+    code_presence = 0
+    words_nb = 0
+    percentage = None
+
+    for line in absolute_lines:
+        words_nb += len(line)
+        for i, char in enumerate(line):
+            if char is not '0' and not None:
+                code_presence += int(char)
+    if words_nb is not 0:
+        percentage = (code_presence / words_nb) * 100
+    # print("Percentage", percentage)
+    return percentage
+
+
+def run_all_detection(text, print_results=True):
+    print("\nFeatures extraction")
+    text_data = extract_features_from_text(text, print_results)
+
+    print("\nBinary and absolute data extraction\n=======================")
+    binary_data = binary_transformation(text_data, print_results)
+    absolute_lines = absolute_transformation(text_data, print_results)
+
+    print("\nCode percentage calculation")
+    binary_percentage = binary_code_percentage(binary_data[1])
+    absolute_percentage = absolute_code_percentage(absolute_lines)
+
+    print("binary_percentage:", binary_percentage)
+    print("absolute_percentage:", absolute_percentage)
