@@ -12,6 +12,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
+    '3to2',
     'RandomWords',
     'google-api-python-client',
     'urllib3',
