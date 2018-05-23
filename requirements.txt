@@ -1,10 +1,9 @@
 3to2
-2to3
 RandomWords
 google-api-python-client
 urllib3
 certifi
-pattern3
+pattern3.web
 bs4
 textstat
 language_check
