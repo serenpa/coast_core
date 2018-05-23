@@ -48,8 +48,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'COAST_core'
-copyright = u"2018, Yann Le Norment"
-author = u"Yann Le Norment"
+copyright = u"2018, Ashley Williams"
+author = u"Ashley Williams"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -130,7 +130,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'coast_core.tex',
      u'COAST_core Documentation',
-     u'Yann Le Norment', 'manual'),
+     u'Ashley Williams', 'manual'),
 ]
 
 
@@ -158,6 +158,3 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

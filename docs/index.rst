@@ -1,8 +1,8 @@
-Welcome to COAST_core's documentation!
+Welcome to the documentation for COAST_CORE!
 ======================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    readme
