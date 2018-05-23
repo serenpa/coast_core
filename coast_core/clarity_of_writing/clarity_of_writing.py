@@ -15,10 +15,7 @@
 
 from textstat.textstat import textstat
 import nltk
-try:
-    import language_check
-except:
-    import grammar_check as language_check
+import language_check
 from textblob import TextBlob
 from langdetect import detect  # breaks the build
 
