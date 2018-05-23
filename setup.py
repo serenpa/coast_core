@@ -17,7 +17,6 @@ requirements = [
     'google-api-python-client',
     'urllib3',
     'certifi',
-    'git://github.com/clips/pattern.git@development',
     'bs4',
     'textstat',
     'language_check',

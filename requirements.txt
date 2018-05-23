@@ -3,7 +3,6 @@ RandomWords
 google-api-python-client
 urllib3
 certifi
--e git://github.com/clips/pattern.git@development
 bs4
 textstat
 language_check
