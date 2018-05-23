@@ -17,7 +17,6 @@ requirements = [
     'google-api-python-client',
     'urllib3',
     'certifi',
-    'pattern3',
     'bs4',
     'textstat',
     'language_check',
