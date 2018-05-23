@@ -38,7 +38,7 @@ def feature_detection(word):
             lines = keywords_file.readlines()
             for keyword in lines:
                 keyword = keyword.rstrip()
-                keyword_rules = "(^| )" + keyword + "( |\(|\{|:|$)"
+                keyword_rules = "(^|\s)" + keyword + "(\s|\(|\{|:|$)"
                 if re.search(keyword_rules, word):
                     match_num += 1
                     features.append(({
@@ -54,8 +54,6 @@ def feature_detection(word):
 
 
 def extract_features_from_text(text, print_results):
-    text_data = []
-
     total_char = 0
     total_words = 0
     total_lines = 0
@@ -120,75 +118,71 @@ def extract_features_from_text(text, print_results):
                   "\nfirst char", first_char, "\nlast_word:", last_word, "\nlast_char", last_char,
                   "\n==========================")
 
-    text_data.append({
-        "total_char": total_char,
-        "total_lines": total_lines,
-        "total_words": total_words,
-        "lines_data": lines_data
-    })
     if print_results:
         print("Total char:", total_char, "\nTotal words:", total_words, "\nTotal lines:", total_lines)
 
-    return text_data
+    return {
+        'total_char': total_char,
+        'total_lines': total_lines,
+        'total_words': total_words,
+        'lines_data': lines_data
+    }
 
 
 def binary_transformation(text_data, print_results):
     binary_text = ''
     binary_lines = []
 
-    for data in text_data:
-
-        for line in data['lines_data']:
-            binary_line = ''
-            for word in line['words_data']:
-                word = word[0]
-                # Default word value
-                word_value = ''
-                try:
-                    if word['features']:
-                        word_value = '1'
-                except:
-                    word_value = '0'
-                binary_line += word_value
-            # Default binary line value
-            binary_line_value = '0'
-            if '1' in binary_line:
-                binary_line_value = '1'
-            # Updating the list of lines in the text
-            binary_lines.append(binary_line)
-            # Updating the string which represent the text
-            binary_text += binary_line_value
-            if print_results:
-                print("Line num:", line['line_num'], "\nBinary line:", binary_line,
-                      "\n=======================")
+    for line in text_data['lines_data']:
+        binary_line = ''
+        for word in line['words_data']:
+            word = word[0]
+            # Default word value
+            word_value = ''
+            try:
+                if word['features']:
+                    word_value = '1'
+            except:
+                word_value = '0'
+            binary_line += word_value
+        # Default binary line value
+        binary_line_value = '0'
+        if '1' in binary_line:
+            binary_line_value = '1'
+        # Updating the list of lines in the text
+        binary_lines.append(binary_line)
+        # Updating the string which represent the text
+        binary_text += binary_line_value
+        if print_results:
+            print("Line num:", line['line_num'], "\nBinary line:", binary_line,
+                  "\n=======================")
     return binary_text, binary_lines
 
 
 def absolute_transformation(text_data, print_results):
     absolute_lines = []
 
-    for data in text_data:
-        for line in data['lines_data']:
-            absolute_line = ''
-            absolute_line_value = 0
-            for word in line['words_data']:
-                word = word[0]
+    for line in text_data['lines_data']:
+        absolute_line = ''
+        absolute_line_value = 0
+        for word in line['words_data']:
+            word = word[0]
 
-                # Default word value
-                word_value = ''
+            # Default word value
+            word_value = ''
 
-                try:
-                    if word['features']:
-                        word_value = str(len(word['features']))
-                except:
-                    word_value = '0'
-                absolute_line += word_value
-                absolute_line_value += int(word_value)
-            absolute_lines.append(absolute_line)
+            try:
+                if word['features']:
+                    word_value = str(len(word['features']))
+            except:
+                word_value = '0'
+            absolute_line += word_value
+            absolute_line_value += int(word_value)
+        absolute_lines.append(absolute_line)
 
-            if print_results:
-                print("Line num:", line['line_num'], "\nAbsolute line:", absolute_line,
-                      "\nValue:", absolute_line_value, "\n=======================")
+        if print_results:
+            print("Line num:", line['line_num'], "\nAbsolute line:", absolute_line,
+                  "\nValue:", absolute_line_value, "\n=======================")
 
     return absolute_lines
 
@@ -228,14 +222,14 @@ def absolute_code_percentage(absolute_lines):
 
 
 def run_all_detection(text, print_results=True):
-    print("\nFeatures extraction")
+    print("\nFeatures extraction\n=======================")
     text_data = extract_features_from_text(text, print_results)
 
     print("\nBinary and absolute data extraction\n=======================")
     binary_data = binary_transformation(text_data, print_results)
     absolute_lines = absolute_transformation(text_data, print_results)
 
-    print("\nCode percentage calculation")
+    print("\nCode percentage calculation\n=======================")
     binary_percentage = binary_code_percentage(binary_data[1])
     absolute_percentage = absolute_code_percentage(absolute_lines)
 

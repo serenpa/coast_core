@@ -17,7 +17,7 @@ def extract_features_from_text(text, print_results=False):
     return code_detection.extract_features_from_text(text, print_results)
 
 
-def binary_transformation(text_data, print_results=False):
+def binary_transformation(text_data, print_results):
     return code_detection.binary_transformation(text_data, print_results)
 
 

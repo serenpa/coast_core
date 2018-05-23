@@ -5,7 +5,7 @@
   "CURLY_BRACKETS": "{|}",
   "PARENTHESES_WITH_NO_SPACE": "\\w\\(.*?\\)",
   "SEMICOLON": ".;",
-  "UNCOMMON_CHARACTER": "(!|<|>|\\+|-)=|\\+|(\\*|&|\\||=)+|(<|>){1,2}|(_|:){2}",
+  "UNCOMMON_CHARACTER": "(!|\\+|-)=|\\+|(\\*|&|\\||=|<|>){1,2}|(_|:){2}",
   "WORDS_SEPARATE_BY_UNDERSCORE": "[[:alnum:]]_[[:alnum:]]",
   "SQUARE_BRACKETS_WITH_NO_SPACE": "\\w\\[.*?\\]",
   "ARROW": ".(-|=)>."
