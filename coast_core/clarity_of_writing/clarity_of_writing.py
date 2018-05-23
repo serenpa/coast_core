@@ -20,23 +20,23 @@ try:
 except:
     import grammar_check as language_check
 from textblob import TextBlob
-# from langdetect import detect  # breaks the build
+from langdetect import detect  # breaks the build
 
 
-# def detect_language(text):
-#     """
-#         Given a body of text, will use the langdetect library to detect the
-#         text language and return.
-#
-#         Args:
-#             text: The body of text to analyse.
-#
-#         Returns:
-#             lang_code: The language code (e.g. EN for English).
-#     """
-#     lang_code = detect(text)
-#
-#     return lang_code
+def detect_language(text):
+    """
+        Given a body of text, will use the langdetect library to detect the
+        text language and return.
+
+        Args:
+            text: The body of text to analyse.
+
+        Returns:
+            lang_code: The language code (e.g. EN for English).
+    """
+    lang_code = detect(text)
+
+    return lang_code
 
 
 def analyse_readability_metrics(article_text):
@@ -223,14 +223,13 @@ def execute_clarity_of_writing_check(article_text):
         Args:
             article_text: The article text to operate on.
     """
-    # language = detect_language(article_text)
+    language = detect_language(article_text)
     readability = analyse_readability_metrics(article_text)
     grammar = analyse_text_for_grammatical_metrics(article_text)
     sentiment = run_sentiment_check(article_text)
 
-    # "language": language,
-
     return {
+        "language": language,
         "readability": readability,
         "grammar": grammar,
         "sentiment": sentiment
