@@ -22,14 +22,9 @@ from langdetect import detect  # breaks the build
 
 def detect_language(text):
     """
-        Given a body of text, will use the langdetect library to detect the
-        text language and return.
-
-        Args:
-            text: The body of text to analyse.
-
-        Returns:
-            lang_code: The language code (e.g. EN for English).
+    Given a body of text, will use the langdetect library to detect the text language and return.
+    :param text: The body of text to analyse.
+    :return: The language code (e.g. EN for English).
     """
     lang_code = detect(text)
 
@@ -38,13 +33,11 @@ def detect_language(text):
 
 def analyse_readability_metrics(article_text):
     """
-        Use the textstat library to report multiple readability measures.
-
-        Refer to the documentation for details of what each measure means
-        (<<link>>).
-
-        Args:
-            article_text: The article text to operate on.
+    Use the textstat library to report multiple readability measures.
+    Refer to the documentation for details of what each measure means.
+    (<<link>>)
+    :param article_text: The article text to operate on.
+    :return: An object containing all measures
     """
     sylls = textstat.syllable_count(article_text)
     words = textstat.lexicon_count(article_text)
@@ -125,16 +118,9 @@ def analyse_readability_metrics(article_text):
 
 def analyse_text_for_grammatical_metrics(article_text):
     """
-        Use the language_check library to check a body of text
-        for grammatical issues.
-
-        Args:
-            article_text: The text to be analyse.
-
-        Returns:
-            total_grammar_issues: The total number of grammatical issues found.
-            grammar_issues: A list containing details of each grammatical issue.
-            sentences: A list of sentences, tokenized by NLTK.
+    Use the language_check library to check a body of text for grammatical issues.
+    :param article_text: The text to be analyse.
+    :return: The total number of grammatical issues found. A list containing details of each grammatical issue. A list of sentences, tokenized by NLTK.
     """
     try:
         tool = language_check.LanguageTool('en-US')
@@ -184,10 +170,9 @@ def analyse_text_for_grammatical_metrics(article_text):
 
 def run_sentiment_check(article_text):
     """
-        Run sentiment analysis over all articleself.
-
-        Args:
-            article_text: The article text to operate on.
+    Run sentiment analysis over the article.
+    :param article_text: The article text to operate on.
+    :return: An object that contain polarity and subjectivity
     """
     tb_text = TextBlob(article_text)
 
@@ -211,14 +196,11 @@ def run_sentiment_check(article_text):
 
 def execute_clarity_of_writing_check(article_text):
     """
-        Runs a complete end-to-end analysis of clarity of writing using all
-        other functions.
-
-        Refer to the documentation for usage guidelines and descriptions of
-        how the config file should be structured (<<link>>).
-
-        Args:
-            article_text: The article text to operate on.
+    Runs a complete end-to-end analysis of clarity of writing using all other functions.
+    Refer to the documentation for usage guidelines and descriptions of how the config file should be structured.
+    (<<link>>)
+    :param article_text: The article text to operate on.
+    :return: An object containing language, readability, grammar and sentiment
     """
     language = detect_language(article_text)
     readability = analyse_readability_metrics(article_text)

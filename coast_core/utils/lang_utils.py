@@ -23,16 +23,11 @@ def import_punkt():
 
 def penn_treebank_filter(article_text, filter_list, exception_list=[]):
     """
-        Returns a list of tuples that are tagged with any
-        penn treebank tag from the filter list.
-
-        Args:
-            article_text: The text to analyse
-            filter_list: The tags to return.
-
-        Returns:
-            result: A list of words containing any of the tags in the filter
-                    list.
+    Returns a list of tuples that are tagged with any penn treebank tag from the filter list.
+    :param article_text: The text to analyse.
+    :param filter_list: The tags to return.
+    :param exception_list: A list of exception
+    :return: A list of words containing any of the tags in the filter list.
     """
     words = nltk.word_tokenize(article_text)
     tagged = nltk.pos_tag(words)
@@ -50,14 +45,10 @@ def penn_treebank_filter(article_text, filter_list, exception_list=[]):
 
 def get_ngrams(text, number):
     """
-        Split a given body of text into ngrams.
-
-        Args:
-            text: The body of text to operate on.
-            number: Specify the size of the ngram (e.g unigram, bigram etc)
-
-        Return:
-            A list of ngrams.
+    Split a given body of text into ngrams.
+    :param text: The body of text to operate on.
+    :param number: Specify the size of the ngram (e.g unigram, bigram etc).
+    :return: A list of ngrams.
     """
     import_punkt()
     tokens = word_tokenize(text)

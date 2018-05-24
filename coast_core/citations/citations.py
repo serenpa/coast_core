@@ -25,13 +25,9 @@ from coast_core import utils
 
 def get_an_articles_domain(link):
     """
-        For a given URL, parse and return the articles TLDN as a string.
-
-        Args:
-            link: The link to parse
-
-        Returns:
-            domain: The domain of the link.
+    For a given URL, parse and return the articles TLDN as a string.
+    :param link: The link to parse.
+    :return: The domain of the link.
     """
     parsed_uri = urlparse(link)
     domain = parsed_uri.netloc
@@ -40,10 +36,9 @@ def get_an_articles_domain(link):
 
 def get_all_citations(html):
     """
-        Extract citations from a single articles HTML.
-
-        Args:
-            html: The html to operate on.
+    Extract citations from a single articles HTML.
+    :param html: The html to operate on.
+    :return: A list of all URI's found in the article.
     """
     soup = BeautifulSoup(html, "html5lib")
 
@@ -61,15 +56,11 @@ def get_all_citations(html):
 
 def select_external_citations(link, all_uris):
     """
-        From a list of uri's, return those that are external to the domain of
+    From a list of uri's, return those that are external to the domain of
         the link.
-
-        Args:
-            link: The link of the article being analysed.
-            all_uris: A list of all URI's found in the article.
-
-        Returns:
-            external_uris: A list of uris that are external to the domain of the
+    :param link: The link of the article being analysed.
+    :param all_uris: A list of all URI's found in the article.
+    :return: A list of uris that are external to the domain of the
             link being analysed.
     """
     domain = get_an_articles_domain(link)
@@ -87,19 +78,13 @@ def select_external_citations(link, all_uris):
 
 def classify_citations(external_uris, classification_config_file):
     """
-        Given a file containing a JSON object of key value
-        {classification:[patterns]} pairs.
-        Classify each of the citations for each article.
-
-        Args:
-            external_uris: A list of uris to classify.
-            classification_config_file: A config file containing all
-            classifications. See the documentation and sample_data for examples.
-            (<<link>>)
-
-        Returns:
-            classified_external_uris: a list of objects containing all
-            classifications.
+    Given a file containing a JSON object of key value {classification:[patterns]} pairs.
+    Classify each of the citations for each article.
+    :param external_uris: A list of uris to classify.
+    :param classification_config_file: A config file containing all classifications.
+    See the documentation and sample_data for examples.
+    (<<link>>)
+    :return: A list of objects containing all classifications.
     """
 
     classifications = utils.get_json_from_file(classification_config_file)
@@ -130,18 +115,10 @@ def classify_citations(external_uris, classification_config_file):
 
 def compute_citation_binary_counts(classified_external_uris, classification_config_file):
     """
-        Take binary counts of each citation type.
-
-        Args:
-            classified_external_uris: a list of objects containing all
-            classifications.
-            classification_config_file: A config file containing all
-            classifications. See the documentation and sample_data for examples.
-            (<<link>>)
-
-        Returns:
-            contains_dict: an object containing a binary count of each
-            classification type.
+    Take binary counts of each citation type.
+    :param classified_external_uris: a list of objects containing all classifications.
+    :param classification_config_file: A config file containing all classifications. See the documentation and sample_data for examples. (<<link>>)
+    :return: An object containing a binary count of each classification type.
     """
     classifications = utils.get_json_from_file(classification_config_file)
     classification_types = [x.upper() for x in classifications.keys()]
@@ -164,18 +141,11 @@ def compute_citation_binary_counts(classified_external_uris, classification_conf
 
 def execute_full_citation_analysis(html, link, classification_config_file):
     """
-        Runs a complete end-to-end analysis of citations using all other
-        functions.
-
-        Args:
-            html: The html to operate on.
-            link: The link of the article being analysed.
-            classification_config_file: A config file containing all
-            classifications. See the documentation and sample_data for examples.
-            (<<link>>)
-
-        Returns:
-            Result: an object containing all analysis.
+    Runs a complete end-to-end analysis of citations using all other functions.
+    :param html: The html to operate on.
+    :param link: The link of the article being analysed.
+    :param classification_config_file: A config file containing all classifications. See the documentation and sample_data for examples. (<<link>>)
+    :return: An object containing all analysis.
     """
     domain = get_an_articles_domain(link)
     all_uris = get_all_citations(html)

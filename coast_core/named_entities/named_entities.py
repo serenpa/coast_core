@@ -31,15 +31,10 @@ except LookupError:
 
 def get_stanford_named_entities(text, exception_list=[]):
     """
-        Returns a list of named entities in a given block of text.
-
-        Args:
-            text: The text to analyse.
-            exception_list: A list of named entities to ignore.
-
-
-        Returns:
-            named_ents: A list of named entities.
+    Returns a list of named entities in a given block of text.
+    :param text: The text to analyse.
+    :param exception_list: A list of named entities to ignore.
+    :return: A list of named entities.
     """
     # print(os.path.dirname(__file__) + "\\resources\\stanford\\english.conll.4class.distsim.crf.ser.gz",
     #                        os.path.dirname(__file__) + "\\resources\\stanford/stanford-ner.jar")
@@ -87,16 +82,10 @@ def getNodes(parent):
 
 def get_nltk_named_entities(text, exception_list=[]):
     """
-        Returns a list of named entities in a given block of text using NLTK's
-        averaged_perceptron_tagger.
-
-        Args:
-            text: The text to analyse.
-            exception_list: A list of named entities to ignore.
-
-
-        Returns:
-            result: A list of named entities.
+    Returns a list of named entities in a given block of text using NLTK's averaged_perceptron_tagger.
+    :param text: The text to analyse.
+    :param exception_list: A list of named entities to ignore.
+    :return: A list of named entities.
     """
     global nltk_named_ents
     nltk_named_ents = []
@@ -119,21 +108,14 @@ def get_nltk_named_entities(text, exception_list=[]):
 
 def get_pronouns(text, exception_list=[]):
     """
-        Returns a list of personal pronouns in a given block of text
-
-        Args:
-            text: The text to analyse.
-            exception_list: A list of named entities to ignore.
-
-
-        Returns:
-            result: A list of named entities.
-    """
-    # Personal pronouns
-    """
+    Returns a list of personal pronouns in a given block of text
         PRP - Personal pronouns
         PRP$ - Possessive pronoun
+    :param text: The text to analyse.
+    :param exception_list: A list of named entities to ignore.
+    :return: A list of named entities.
     """
+    # Personal pronouns
     pronoun_list = ['PRP', 'PRP$']
     result = utils.penn_treebank_filter(text, pronoun_list, exception_list)
     return result
@@ -141,13 +123,9 @@ def get_pronouns(text, exception_list=[]):
 
 def extract_all_named_entities(article_text):
     """
-        Extract the named entities for all extracted articles.
-
-        Args:
-            article_text: The article text to operate on.
-
-        Returns:
-            result: An object containing all named entities
+    Extract the named entities for all extracted articles.
+    :param article_text: The article text to operate on.
+    :return: An object containing all named entities
     """
     stanford = get_stanford_named_entities(article_text)
     nltk = get_nltk_named_entities(article_text)

@@ -18,13 +18,9 @@ from coast_core import utils
 
 def generate_ngrams(article_text):
     """
-        Generate ngrams from 1 to 6.
-
-        Args:
-            article_text: the text to operate on.
-
-        Returns:
-            result: An object containing all ngrams up to 6.
+    Generate ngrams from 1 to 6.
+    :param article_text: the text to operate on.
+    :return: An object containing all ngrams up to 6.
     """
 
     unigrams = utils.get_ngrams(article_text, 1)

@@ -12,16 +12,10 @@ import sys
 
 def draw_progress_bar(percent, bar_len=20):
     """
-        Given a percentage, will print a progress bar to the console. Useful
-        for reporting progress on large calculations.
-
-        Args:
-            percent: The percent of the calculation that is complete.
-            bar_len: How long the progress bar that is displayed should be.
-                     Default is 20 characters.
-
-        Returns:
-            Nothing, output is printed to the stdout.
+    Given a percentage, will print a progress bar to the console. Useful for reporting progress on large calculations.
+    :param percent: The percent of the calculation that is complete.
+    :param bar_len: How long the progress bar that is displayed should be. Default is 20 characters.
+    :return: Nothing, output is printed to the stdout.
     """
     sys.stdout.write("\r")
     progress = ""

@@ -19,16 +19,11 @@ from coast_core import utils
 
 def analyse_set_of_markers_for_a_given_article(article_text, list_of_markers):
     """
-        Given a link and a set of markers, return a frequency dictionary that
-        shows how many times each marker appeared in the extracted article.
-
-        Args:
-            article_text: The text to search.
-            list_of_markers: A list of markers to search for. Each marker is an ngram.
-
-        Returns:
-            markers_frequency: A dictionary of markers and their frequency
-            counts for a given link.
+    Given a link and a set of markers, return a frequency dictionary that shows how many times each marker appeared
+    in the extracted article.
+    :param article_text: The text to search.
+    :param list_of_markers: A list of markers to search for. Each marker is an ngram.
+    :return: A dictionary of markers and their frequency counts for a given link.
     """
 
     article_text = article_text.lower()
@@ -64,19 +59,12 @@ def analyse_set_of_markers_for_a_given_article(article_text, list_of_markers):
 
 def run_all_markers(article_text, config_file):
     """
-            Runs a complete end-to-end analysis of markers using all other
-            functions.
-
-            Refer to the documentation for usage guidelines and descriptions of
-            how the config file should be structured (http://coast.readthedocs.io/).
-
-            Args:
-                article_text: The text to search.
-                config_file: A JSON file containing all relevant information for
-                             conducting the analysis.
-
-            Returns:
-                result: An object containing all markers found
+    Runs a complete end-to-end analysis of markers using all other functions.
+    Refer to the documentation for usage guidelines and descriptions of how the config file should be structured
+    (<<link>>).
+    :param article_text: The text to search.
+    :param config_file: A JSON file containing all relevant information for conducting the analysis.
+    :return: An object containing all markers found
     """
     config = utils.get_json_from_file(config_file)
     markers_files = config["markers_files"]
