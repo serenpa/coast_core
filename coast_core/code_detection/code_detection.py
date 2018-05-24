@@ -63,8 +63,7 @@ def extract_features_from_text(text, print_results):
     This is the main function of the code detection module. It will split the text by lines and words for analyse.
     :param text: the text to operate on.
     :param print_results: False by default, pass it True if you want to print results.
-    :return: An object containing the number of characters in the text, the number of lines, the number of words and
-    the data of all lines.
+    :return: An object containing the number of characters in the text, the number of lines, the number of words and the data of all lines.
     """
     total_char = 0
     total_words = 0

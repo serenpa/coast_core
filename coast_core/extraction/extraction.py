@@ -96,16 +96,6 @@ def full_extraction(url):
     :param url: The url to extract the HTML from
     :return: The html extracted from the url
     """
-    """
-        Runs a complete end-to-end extraction using all other functions.
-
-        Refer to the documentation for usage guidelines and descriptions of
-        how the config file should be structured (<<link>>).
-
-        Args:
-            url: The url to extract the HTML from
-
-    """
     full_html = get_html(url)
     # pattern_extraction = pattern_article_extraction(url)
 

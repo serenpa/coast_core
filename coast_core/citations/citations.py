@@ -56,12 +56,10 @@ def get_all_citations(html):
 
 def select_external_citations(link, all_uris):
     """
-    From a list of uri's, return those that are external to the domain of
-        the link.
+    From a list of uri's, return those that are external to the domain of the link.
     :param link: The link of the article being analysed.
     :param all_uris: A list of all URI's found in the article.
-    :return: A list of uris that are external to the domain of the
-            link being analysed.
+    :return: A list of uris that are external to the domain of the link being analysed.
     """
     domain = get_an_articles_domain(link)
 

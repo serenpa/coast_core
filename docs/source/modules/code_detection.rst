@@ -78,5 +78,60 @@ Usage
 If you want to use the module follow the next steps
 **Currently under development**
 
-Function List
+Table of function(s)
 ----------------
++---------------------------------------------------+------------------------------------------------------------+
+| Function                                          | Description                                                |
++---------------------------------------------------+------------------------------------------------------------+
+| feature_detection(word)                           | This function will detect features in a word.              |
+|                                                   | :param word: the word to operate on.                       |
+|                                                   | :return: the list of features of a word.                   |
++---------------------------------------------------+------------------------------------------------------------+
+| extract_features_from_text(text, print_results)   | This is the main function of the code detection            |
+|                                                   | module. It will split the text by lines and                |
+|                                                   | words for analyse.:param text: the text to operate on.     |
+|                                                   | :param print_results: False by default, pass it True       |
+|                                                   | if you want to print results.                              |
+|                                                   | :return: An object containing the number of characters     |
+|                                                   | in the text, the number of lines, the number of words      |
+|                                                   | and the data of all lines.                                 |
++---------------------------------------------------+------------------------------------------------------------+
+| binary_transformation(text_data, print_results)   | This function will transform the text into 0 and 1.        |
+|                                                   | 0 if there is no code in a line else 1.                    |
+|                                                   | :param text_data: The text data from the                   |
+|                                                   | extraction of features.                                    |
+|                                                   | :param print_results: False by default, pass it True       |
+|                                                   | if you want to print results.                              |
+|                                                   | :return: the text transformed and a list of lines          |
+|                                                   | containing the value of each word (0 or 1).                |
++---------------------------------------------------+------------------------------------------------------------+
+| absolute_transformation(text_data, print_results) | This function will transform the text into the number      |
+|                                                   | of code detected in a line.                                |
+|                                                   | :param text_data: the text data from the                   |
+|                                                   | extraction feature.                                        |
+|                                                   | :param print_results: False by default, pass it True       |
+|                                                   | if you want to print results.                              |
+|                                                   | :return: a list of lines containing the value of each      |
+|                                                   | word, depending of the number of features detected.        |
++---------------------------------------------------+------------------------------------------------------------+
+| binary_code_percentage(binary_lines)              | Runs a complete end-to-end analysis of clarity of writing  |
+|                                                   | using all other functions.Refer to the documentation for   |
+|                                                   | usage guidelines and descriptions of how the config file   |
+|                                                   | should be structured.(<<link>>)                            |
+|                                                   | :param article_text: The article text to operate on.       |
+|                                                   | :return: An object containing language, readability,       |
+|                                                   | grammar and sentiment                                      |
++---------------------------------------------------+------------------------------------------------------------+
+| absolute_code_percentage(absolute_lines)          | Will return the percentage of code in the binary           |
+|                                                   | lines by detecting anything else than 0 or None.           |
+|                                                   | :param absolute_lines: The article's lines transformed     |
+|                                                   | by the absolute transformation.                            |
+|                                                   | :return: the absolute percentage of code in the text.      |
++---------------------------------------------------+------------------------------------------------------------+
+| run_all_detection(text, print_results=False)      | Launch all the detection analysis.                         |
+|                                                   | :param text: the text to operate on.                       |
+|                                                   | :param print_results: False by default, pass it True       |
+|                                                   | if you want to print results.                              |
+|                                                   | :return: Nothing, the percentage (binary and absolute)     |
+|                                                   | of code is printed at the end of the analysis.             |
++---------------------------------------------------+------------------------------------------------------------+
