@@ -12,3 +12,4 @@ textblob
 docopt
 langdetect
 html5lib
+sphinx_rtd_theme

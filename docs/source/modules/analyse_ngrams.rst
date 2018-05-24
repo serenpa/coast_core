@@ -22,3 +22,8 @@ Table of function(s)
 |                               | :param article_text: the text to operate on.      |
 |                               | :return: An object containing all ngrams up to 6. |
 +-------------------------------+---------------------------------------------------+
+
+.. automodule:: coast_core.analyse_ngrams
+    :members:
+    :undoc-members:
+    :show-inheritance:

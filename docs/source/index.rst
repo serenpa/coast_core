@@ -1,16 +1,17 @@
 Welcome to the documentation for COAST_CORE!
-======================================
+============================================
+
+Contents:
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Contents:
+   :maxdepth: 2
+
    readme
    installation
    modules
    contributing
    authors
    history
-
 
 Indices and tables
 ==================
