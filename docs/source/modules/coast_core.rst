@@ -1,14 +1,14 @@
-coast\_core package
+COAST core
 ===================
 
-Subpackages
+Resources
 -----------
 
 .. toctree::
 
     coast_core.resources
 
-Module contents
+Content
 ---------------
 
 .. automodule:: coast_core

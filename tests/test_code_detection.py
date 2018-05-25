@@ -7,7 +7,7 @@
 """
 import unittest
 
-from coast_core import extraction, code_detection
+from coast_core import code_detection
 
 
 class TestCodeDetection(unittest.TestCase):

@@ -10,10 +10,10 @@ Tests for `coast` module.
 import os
 import unittest
 
-from coast_core import lang_utils as utils
+from coast_core import file_utils as utils
 
 
-class TestUtils(unittest.TestCase):
+class TestFileUtils(unittest.TestCase):
 
     def setUp(self):
         self.file = os.path.dirname(__file__) + "/test_data/language_wars.html"
