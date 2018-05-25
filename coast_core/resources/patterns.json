@@ -1,6 +1,6 @@
 {
   "DOT_WITH_NO_SPACE":"\\w\\.\\w",
-  "CAMEL_CASE": "[A-Z][a-z0-9]+[A-Z][a-z0-9]+([A-Z][a-z0-9]+)*",
+  "CAMEL_CASE": "[A-Z][a-z0-9]+[A-Z][a-z0-9]+",
   "COMMENTS": "\"\"\"|/(\\*+)|//|\\*+/|#|<!--|-->",
   "CURLY_BRACKETS": "{|}",
   "PARENTHESES_WITH_NO_SPACE": "\\w\\(.*?\\)",

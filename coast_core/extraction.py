@@ -1,13 +1,5 @@
 """
-Title: extraction_command.py
-
-Author: Ashley Williams
-
-Description: A collection of functions that can be used for extracting
-information from the results of the searchs.
-
-This module is called by init, so there is no need to import this module
-specifically.
+A collection of functions that can be used for extracting information from the results of the searchs.
 """
 import urllib3
 import certifi

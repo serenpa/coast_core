@@ -1,11 +1,5 @@
 """
-Title: file_utils.py
-
-Author: Ashley Williams
-
-Description: A collection of generic utility functions that are used
-throughout coast by various modules relating to reading and writing to
-files.
+A collection of generic utility functions that are used throughout coast_core by various modules relating to reading and writing to files.
 """
 import sys
 import json
@@ -15,8 +9,9 @@ def get_from_file(filename):
     """
     Reads a file and returns each line as a list of strings.
     Notes:
-        1. All double quotes are replaced with single quotes.
-        2. New line (\n) characters are removed.
+
+    1. All double quotes are replaced with single quotes.
+    2. New line characters are removed.
 
     :param filename: The path to the file you wish to read.
     :return: A list of strings, where each string is a line in the file.

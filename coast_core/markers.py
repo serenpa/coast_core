@@ -1,13 +1,5 @@
 """
-Title: markers.py
-
-Author: Ashley Williams
-
-Description: A collection of functions that can be used for analysing the
-markers within result text.
-
-This module is called by init, so there is no need to import this module
-specifically.
+A collection of functions that can be used for analysing the markers within result text.
 """
 import string
 

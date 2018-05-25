@@ -1,15 +1,9 @@
 """
-See the documentation and sample_data for examples.
-(https://coast-core.readthedocs.io)
-Title: citation.py
+A collection of functions that can be used for analysing the citations within results to other resources.
 
-Author: Ashley Williams
+-------------
 
-Description: A collection of functions that can be used for analysing the
-citations within results to other resources.
-
-This module is called by init, so there is no need to import this module
-specifically.
+See the documentation and sample_data for examples (https://coast-core.readthedocs.io).
 """
 try:
     from urllib.parse import urlparse

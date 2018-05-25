@@ -1,13 +1,5 @@
 """
-Title: analyse_ngrams.py
-
-Author: Ashley Williams
-
-Description: A collection of functions that can be used for splitting
-articles into ngrams.
-
-This module is called by init, so there is no need to import this module
-specifically.
+A collection of functions that can be used for splitting the article into ngrams.
 """
 
 from coast_core import lang_utils as utils

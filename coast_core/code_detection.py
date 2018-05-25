@@ -1,10 +1,5 @@
 """
-Title: code_detection
-
-Author: Yann Le Norment
-
-Description: In order to accurate the relevance of an article or text, we look for code in it.
-
+A collection of function that detect and analyse an article
 """
 import json
 import sys

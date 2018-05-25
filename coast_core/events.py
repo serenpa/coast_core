@@ -1,12 +1,5 @@
 """
-Title: events.py
-
-Author: Ashley Williams
-
-Description: Extract event instances from text.
-
-This module is called by init, so there is no need to import this module
-specifically.
+Extract event instances from text.
 """
 from coast_core.resources.external_libs import timex
 from coast_core import lang_utils as utils

@@ -41,6 +41,16 @@ Subjectivity is when text is an explanatory article which must be analysed in co
 
 Usage
 -----
+To use the module::
+
+>>>import coast_core
+>>>clarity_of_writing.function(to_use)
+
+or::
+
+>>>import coast_core
+>>>from coast_core import clarity_of_writing
+>>>function(to_use)
 
 Functions
 ---------

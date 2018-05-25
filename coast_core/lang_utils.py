@@ -1,10 +1,5 @@
 """
-Title: file_utils.py
-
-Author: Ashley Williams
-
-Description: A collection of generic utility functions that are used
-throughout coast by various modules relating to NLP tasks.
+A collection of generic utility functions that are used throughout coast by various modules relating to NLP tasks.
 """
 import nltk
 from nltk.util import ngrams
