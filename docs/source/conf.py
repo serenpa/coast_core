@@ -12,10 +12,21 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('..'))
+# sys.path.insert(0, os.path.abspath('../../coast_core'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/analyse_ngrams'))
+print(sys.path)
+# sys.path.insert(0, os.path.abspath('../../coast_core/citations'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/clarity_of_writing'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/code_detection'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/events'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/extraction'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/markers'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/named_entities'))
+# sys.path.insert(0, os.path.abspath('../../coast_core/utils'))
 
 # -- Project information -----------------------------------------------------
 import coast_core

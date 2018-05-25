@@ -1,7 +1,0 @@
-"""
-    Title:
-    
-    Author: 
-    
-    Description:
-"""

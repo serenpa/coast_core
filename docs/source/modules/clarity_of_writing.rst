@@ -1,44 +1,50 @@
-The clarity of writing module
-=================
-**Currently under development**
+Clarity of writing
+==================
 Introduction
 ------------
+
+The Flesch Reading Ease Score.
+Following table is helpful to access the ease of readability in a document.
+
+    * 90-100 : Very Easy
+    * 80-89 : Easy
+    * 70-79 : Fairly Easy
+    * 60-69 : Standard
+    * 50-59 : Fairly Difficult
+    * 30-49 : Difficult
+    * 0-29 : Very Confusing
+
+-----------
+
+**The readability metrics:**
+
+1. The grade score using the Flesch-Kincaid Grade Formula. For example a score of 9.3 means that a ninth grader would be able to read the document.
+
+2. The FOG index of the given text
+
+3. The SMOG index of the given text
+
+4. The ARI(Automated Readability Index) which outputs a number that approximates the grade level needed to comprehend the text. For example if the ARI is 6.5, then the grade level to comprehend the text is 6th to 7th grade
+
+5. The grade level of the text using the Coleman-Liau Formula
+
+6. The grade level using the Lisear Write Formula
+
+7. The grade level using the New Dale-Chall Formula.
+
+-------------
+
+**Sentiment:**
+
+Polarity, also known as orientation is he emotion expressed in the sentence. It can be positive, neagtive or neutral.
+Subjectivity is when text is an explanatory article which must be analysed in context.
 
 Usage
 -----
 
-Table of function(s)
---------------------
-+------------------------------------------------+------------------------------------------------------------+
-| Function                                       | Description                                                |
-+------------------------------------------------+------------------------------------------------------------+
-| detect_language(text)                          | Given a body of text, will use the langdetect              |
-|                                                | library to detect the text language and return.            |
-|                                                | :param text: The body of text to analyse.                  |
-|                                                | :return: The language code (e.g. EN for English).          |
-+------------------------------------------------+------------------------------------------------------------+
-| analyse_readability_metrics(article_text)      | Use the textstat library to report multiple                |
-|                                                | readability measures.Refer to the documentation            |
-|                                                | for details of what each measure means.(<<link>>)          |
-|                                                | :param article_text: The article text to operate on.       |
-|                                                | :return: An object containing all measures                 |
-+------------------------------------------------+------------------------------------------------------------+
-| analyse_text_for_grammatical_metrics(          | Use the language_check library to check a body of text     |
-| article_text)                                  | for grammatical issues.                                    |
-|                                                | :param article_text: The text to be analyse.               |
-|                                                | :return: The total number of grammatical issues found.     |
-|                                                | A list containing details of each grammatical issue.       |
-|                                                | A list of sentences, tokenized by NLTK.                    |
-+------------------------------------------------+------------------------------------------------------------+
-| run_sentiment_check(article_text)              | Run sentiment analysis over the article.                   |
-|                                                | :param article_text: The article text to operate on.       |
-|                                                | :return: An object that contain polarity and subjectivity  |
-+------------------------------------------------+------------------------------------------------------------+
-| execute_clarity_of_writing_check(article_text) | Runs a complete end-to-end analysis of clarity of writing  |
-|                                                | using all other functions.Refer to the documentation for   |
-|                                                | usage guidelines and descriptions of how the config file   |
-|                                                | should be structured.(<<link>>)                            |
-|                                                | :param article_text: The article text to operate on.       |
-|                                                | :return: An object containing language, readability,       |
-|                                                | grammar and sentiment                                      |
-+------------------------------------------------+------------------------------------------------------------+
+Functions
+---------
+.. automodule:: coast_core.clarity_of_writing
+    :members:
+    :undoc-members:
+    :show-inheritance:

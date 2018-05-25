@@ -8,10 +8,11 @@ Contents:
 
    readme
    installation
-   modules
+   ./modules/modules
    contributing
    authors
    history
+   usage
 
 Indices and tables
 ==================
