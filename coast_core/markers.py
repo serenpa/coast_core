@@ -50,11 +50,11 @@ def analyse_set_of_markers_for_a_given_article(article_text, list_of_markers):
 def run_all_markers(article_text, config_file):
     """
     Runs a complete end-to-end analysis of markers using all other functions.
-    Refer to the documentation for usage guidelines and descriptions of how the config file should be structured.
-    https://coast-core.readthedocs.io
 
     :param article_text: The text to search.
-    :param config_file: A JSON file containing all relevant information for conducting the analysis.
+    :param config_file: A JSON file containing all relevant information for conducting the analysis. The config file should be structured as shown in the test data: https://github.com/zedrem/coast_core/blob/master/tests/test_data/config_file.json.
+     Each specific marker file should then be structured as shown in: https://github.com/zedrem/coast_core/blob/master/tests/test_data/markers_experience_9.json.  
+
     :return: An object containing all markers found
     """
     config = utils.get_json_from_file(config_file)
@@ -64,6 +64,5 @@ def run_all_markers(article_text, config_file):
 
     for filename in markers_files:
         markers_config = utils.get_json_from_file(filename)
-        result[markers_config["title"]] = analyse_set_of_markers_for_a_given_article(article_text,
-                                                                                     markers_config["markers"])
+        result[markers_config["title"]] = analyse_set_of_markers_for_a_given_article(article_text, markers_config["markers"])
     return result
