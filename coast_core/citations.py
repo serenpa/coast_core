@@ -78,6 +78,15 @@ def classify_citations(external_uris, classification_config_file):
     Given a file containing a JSON object of key value {classification:[patterns]} pairs.
     Classify each of the citations for each article.
 
+    For example, given the following JSON:
+
+    {
+      "research": ["reseaerchgate", "ieee.", "dx.doi.", "acm", "sciencedirect"]
+    }
+
+    All citations that contain any sub-string within the list will be classified as 'research' citations. A
+    more detailed JSON example can be found in our test_data: https://github.com/zedrem/coast_core/blob/master/tests/test_data/citations_classification.json
+
     :param external_uris: A list of uris to classify.
     :param classification_config_file: A config file containing all classifications.
 
