@@ -79,8 +79,6 @@ def get_html(url):
 def full_extraction(url):
     """
     Runs a complete end-to-end extraction using all other functions.
-    Refer to the documentation for usage guidelines and descriptions of how the config file should be structured.
-    https://coast-core.readthedocs.io
 
     :param url: The url to extract the HTML from
     :return: The html extracted from the url
