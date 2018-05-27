@@ -1,5 +1,8 @@
 Clarity of writing
 ==================
+
+.. _clarity-of-writing:
+
 Introduction
 ------------
 

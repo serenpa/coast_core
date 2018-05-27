@@ -1,5 +1,8 @@
 Events
 ======
+
+.. _events:
+
 Introduction
 ------------
 

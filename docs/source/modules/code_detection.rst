@@ -1,5 +1,8 @@
 Code detection
 ==============
+
+.. _code-detection:
+
 Introduction
 ------------
 The code detection module use two files: patterns.json and keywords.txt

@@ -1,5 +1,8 @@
 Named entities
 ==============
+
+.. _named-entities:
+
 Introduction
 ------------
 

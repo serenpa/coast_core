@@ -1,5 +1,8 @@
 Extraction
 ==========
+
+.. _extraction:
+
 Introduction
 ------------
 

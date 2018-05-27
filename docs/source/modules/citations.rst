@@ -1,5 +1,8 @@
 Citations
 =========
+
+.. _citations:
+
 Introduction
 ------------
 The citation module will extract all the data from a url.

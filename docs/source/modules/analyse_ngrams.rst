@@ -1,5 +1,8 @@
 Analyse_ngrams
 ==============
+
+.. _n-grams:
+
 Introduction
 ------------
 The analyse_ngrams module will split an article into ngrams. It use `ngrams` from `nltk` library.
