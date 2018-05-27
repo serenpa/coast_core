@@ -4,7 +4,7 @@ coast_core
 .. toctree::
    :maxdepth: 4
 
-   analyse_ngrams
+   ngram_extraction
    citations
    clarity_of_writing
    code_detection

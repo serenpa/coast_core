@@ -27,7 +27,7 @@ Features
 --------
 COAST_CORE is made up of several modules for:
 
-* `N-Gram analysis <https://coast-core.readthedocs.io/en/latest/modules/analyse_ngrams.html>`_
+* `N-Gram extraction <https://coast-core.readthedocs.io/en/latest/modules/ngram_extraction.html>`_
 * `Citation detection and classification <https://coast-core.readthedocs.io/en/latest/modules/citations.html>`_
 * `Clarity of writing assessment <https://coast-core.readthedocs.io/en/latest/modules/clarity_of_writing.html>`_
 * `Code detection <https://coast-core.readthedocs.io/en/latest/modules/code_detection.html>`_
