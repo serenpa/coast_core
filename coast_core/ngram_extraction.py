@@ -7,10 +7,20 @@ from coast_core import lang_utils as utils
 
 def generate_ngrams(article_text):
     """
-    Generate ngrams from 1 to 6.
+    Split the given text into ngrams, returning an object that contains ngrams from one to six.
 
-    :param article_text: the text to operate on.
-    :return: An object containing all ngrams up to 6.
+    :param article_text: the block of text to operate on.
+    :return: An object containing all ngrams up to 6 in the following structure:
+
+        {
+            "unigrams": [list of unigrams],
+            "bigrams": [list of bigrams],
+            "trigrams": [list of trigrams],
+            "fourgrams": [list of fourgrams],
+            "fivegrams": [list of fivegrams],
+            "sixgrams": [list of sixgrams]
+        }
+
     """
 
     unigrams = utils.get_ngrams(article_text, 1)
