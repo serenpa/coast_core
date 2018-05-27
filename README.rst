@@ -27,14 +27,14 @@ Features
 --------
 COAST_CORE is made up of several modules for:
 
-* :ref:`N-Gram analysis <n-grams>`
-* :ref:`Citation detection and classification <citations>`
-* :ref:`Clarity of writing assessment <clarity-of-writing>`
-* :ref:`Code detection <code-detection>`
-* :ref:`Event detection <events>`
-* :ref:`Article extraction <extraction>`
-* :ref:`Keyword detection <markers>`
-* :ref:`Named entity detection <named-entities>`
+* `N-Gram analysis <https://coast-core.readthedocs.io/en/latest/modules/analyse_ngrams.html>`_
+* `Citation detection and classification <https://coast-core.readthedocs.io/en/latest/modules/citations.html>`_
+* `Clarity of writing assessment <https://coast-core.readthedocs.io/en/latest/modules/clarity_of_writing.html>`_
+* `Code detection <https://coast-core.readthedocs.io/en/latest/modules/code_detection.html>`_
+* `Event detection <https://coast-core.readthedocs.io/en/latest/modules/events.html>`_
+* `Article extraction <https://coast-core.readthedocs.io/en/latest/modules/extraction.html>`_
+* `Keyword detection <https://coast-core.readthedocs.io/en/latest/modules/markers.html>`_
+* `Named entity detection <https://coast-core.readthedocs.io/en/latest/modules/named_entities.html>`_
 
 Prerequisites
 -------------
@@ -44,3 +44,24 @@ There are two methods of named entity detection included as part of COAST_CORE. 
 running the Stanford named entity detection, you will need Java_ installed.
 
 .. _Java: https://java.com/en/download/
+
+Installation
+------------
+
+To install COAST_CORE, run this command in your terminal:
+
+.. code-block:: console
+
+    $ pip install coast_core
+
+This is the preferred method to install COAST_CORE, as it will always install the most recent stable release.
+
+If you don't have `pip`_ installed, this `Python installation guide`_ can guide
+you through the process.
+
+To install from source, visit our documentation_.
+
+.. _pip: https://pip.pypa.io
+.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+
+.. _documentation: https://coast-core.readthedocs.io
