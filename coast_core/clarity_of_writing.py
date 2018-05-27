@@ -24,10 +24,20 @@ def detect_language(text):
 def analyse_readability_metrics(article_text):
     """
     Use the textstat library to report multiple readability measures.
-    Refer to the documentation for details of what each measure means.
+
+    The readability metrics analysed are:
+    * The Flesch Reading Ease Score. A score from 100 (very easy to read) to 0 (very confusing).
+    * The grade score using the Flesch-Kincaid Grade Formula. For example a score of 9.3 means that a ninth grader would be able to read the document.
+    * The FOG index of the given text
+    * The SMOG index of the given text
+    * The ARI(Automated Readability Index) which outputs a number that approximates the grade level needed to comprehend the text. For example if the ARI is 6.5, then the grade level to comprehend the text is 6th to 7th grade
+    * The grade level of the text using the Coleman-Liau Formula
+    * The grade level using the Lisear Write Formula
+    * The grade level using the New Dale-Chall Formula.
+
+
 
     :param article_text: The article text to operate on.
-
     :return: An object containing all measures
     """
     sylls = textstat.syllable_count(article_text)
@@ -167,7 +177,8 @@ def run_sentiment_check(article_text):
 
     :param article_text: The article text to operate on.
 
-    :return: An object that contain polarity and subjectivity
+    :return: An object that contain polarity and subjectivity. Polarity, also known as orientation is he emotion expressed in the sentence. It can be positive, neagtive or neutral.
+                Subjectivity is when text is an explanatory article which must be analysed in context.
     """
     tb_text = TextBlob(article_text)
 
