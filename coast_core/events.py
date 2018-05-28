@@ -13,7 +13,8 @@ except LookupError:
 
 def get_timex_events(text):
     """
-    Given a body of text, returns a list of Timex events.
+    Given a body of text, returns a list of Timex events. Timex events are temporal events that are detected using regular expressions.
+    Our timex library is a variation of the Timex module in NLTK_contrib: https://github.com/nltk/nltk_contrib/blob/master/nltk_contrib/timex.py
 
     :param text:  The text to operate on
     :return: return the timex events

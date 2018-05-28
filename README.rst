@@ -1,5 +1,5 @@
 ==========
-COAST_core
+COAST_CORE
 ==========
 
 
@@ -16,8 +16,8 @@ COAST_core
 
 
 
-Core functionality of COAST
-
+COAST_CORE is a tool designed for aiding the credibility assessment of online
+articles. It is a collection of modules that are useful for assessing various aspects of credibility.
 
 * Free software: MIT license
 * Documentation: https://coast-core.readthedocs.io.
@@ -25,13 +25,43 @@ Core functionality of COAST
 
 Features
 --------
+COAST_CORE is made up of several modules for:
 
-* TODO
+* `N-Gram extraction <https://coast-core.readthedocs.io/en/latest/modules/ngram_extraction.html>`_
+* `Citation detection and classification <https://coast-core.readthedocs.io/en/latest/modules/citations.html>`_
+* `Clarity of writing assessment <https://coast-core.readthedocs.io/en/latest/modules/clarity_of_writing.html>`_
+* `Code detection <https://coast-core.readthedocs.io/en/latest/modules/code_detection.html>`_
+* `Event detection <https://coast-core.readthedocs.io/en/latest/modules/events.html>`_
+* `Article extraction <https://coast-core.readthedocs.io/en/latest/modules/extraction.html>`_
+* `Keyword detection <https://coast-core.readthedocs.io/en/latest/modules/markers.html>`_
+* `Named entity detection <https://coast-core.readthedocs.io/en/latest/modules/named_entities.html>`_
 
-Credits
--------
+Prerequisites
+-------------
+The tool is built in Python 3 and tested in versions 3.3, 3.4, 3.5, 3.6 and pypy3.
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+There are two methods of named entity detection included as part of COAST_CORE. For
+running the Stanford named entity detection, you will need Java_ installed.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _Java: https://java.com/en/download/
+
+Installation
+------------
+
+To install COAST_CORE, run this command in your terminal:
+
+.. code-block:: console
+
+    $ pip install coast_core
+
+This is the preferred method to install COAST_CORE, as it will always install the most recent stable release.
+
+If you don't have `pip`_ installed, this `Python installation guide`_ can guide
+you through the process.
+
+To install from source, visit our documentation_.
+
+.. _pip: https://pip.pypa.io
+.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+
+.. _documentation: https://coast-core.readthedocs.io

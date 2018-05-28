@@ -1,21 +1,29 @@
 Events
 ======
+
+.. _events:
+
 Introduction
 ------------
+The event detection module analyses a body of text to identify events that have taken place. This is
+useful for identifying mentions of personal experience or story mining.
 
 Usage
 -----
 
-To use the module::
+To use the module:
 
->>>import coast_core
->>>events.function(to_use)
+.. code-block:: console
 
-or::
+    >>> import coast_core
+    >>> events.function(to_use)
 
->>>import coast_core
->>>from coast_core import events
->>>function(to_use)
+or:
+
+.. code-block:: console
+
+    >>> from coast_core import events
+    >>> function(to_use)
 
 Functions
 ---------

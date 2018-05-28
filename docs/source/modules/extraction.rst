@@ -1,21 +1,28 @@
 Extraction
 ==========
+
+.. _extraction:
+
 Introduction
 ------------
+The extraction module can be used for extracting HTML and article text from a given URL.
 
 Usage
 -----
 
-To use the module::
+To use the module:
 
->>>import coast_core
->>>extraction.function(to_use)
+.. code-block:: console
 
-or::
+    >>> import coast_core
+    >>> extraction.function(to_use)
 
->>>import coast_core
->>>from coast_core import extraction
->>>function(to_use)
+or:
+
+.. code-block:: console
+
+    >>> from coast_core import extraction
+    >>> function(to_use)
 
 Functions
 ---------

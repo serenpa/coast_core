@@ -1,22 +1,32 @@
 Citations
 =========
+
+.. _citations:
+
 Introduction
 ------------
-The citation module will extract all the data from a url.
+The citation module contains functions for doing the following:
+
+* Given a block of HTML, it will extract all of the URLs by analysing the anchor <a> tags.
+* Given the URL of the HTML being analysed, will determine which of the citations found are external resources.
+* Given a JSON file of classifications, will classify each of the external URLs accordingly.
 
 
 Usage
 -----
-To use the citations module::
+To use the citations module:
 
->>>import coast_core
->>>citations.function(to_use)
+.. code-block:: console
 
-or::
+    >>>import coast_core
+    >>>citations.function(to_use)
 
->>>import coast_core
->>>from coast_core import citations
->>>function(to_use)
+or:
+
+.. code-block:: console
+
+    >>>from coast_core import citations
+    >>>function(to_use)
 
 Functions
 ---------

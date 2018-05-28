@@ -1,5 +1,8 @@
 Utils
 ===========
+
+.. _utils:
+
 Introduction
 ------------
 
