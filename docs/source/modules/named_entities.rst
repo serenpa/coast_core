@@ -5,20 +5,27 @@ Named entities
 
 Introduction
 ------------
+The named entities module extracts named entites using NLTK, Stanford, and by just tagging text and extracting Personal Pronouns.
+Named entities are useful for identifying characters in stories, personal experience and events.
+
+Note: In order to use the Stanford named entity detection, you will need to have Java installed.
 
 Usage
 -----
 
-To use the module::
+To use the module:
 
->>>import coast_core
->>>named_entities.function(to_use)
+.. code-block:: console
 
-or::
+    >>> import coast_core
+    >>> named_entities.function(to_use)
 
->>>import coast_core
->>>from coast_core import named_entities
->>>function(to_use)
+or:
+
+.. code-block:: console
+
+    >>> from coast_core import named_entities
+    >>> function(to_use)
 
 Functions
 ---------
