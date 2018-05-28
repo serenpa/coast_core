@@ -18,7 +18,7 @@ def feature_detection(word):
     match_num = 0
 
     try:
-        with open(os.path.dirname(__file__) + "/resources/patterns.json") as patterns:
+        with open(os.path.dirname(__file__) + "/resources/data/patterns.json") as patterns:
             features_file = json.load(patterns)
             for type, pattern in features_file.items():
                 matches = re.finditer(pattern, word)
@@ -36,7 +36,7 @@ def feature_detection(word):
 
     # Keywords
     try:
-        with open(os.path.dirname(__file__) + "/resources/keywords.txt") as keywords_file:
+        with open(os.path.dirname(__file__) + "/resources/data/keywords.txt") as keywords_file:
             lines = keywords_file.readlines()
             for keyword in lines:
                 keyword = keyword.rstrip()
@@ -55,12 +55,11 @@ def feature_detection(word):
     return features
 
 
-def extract_features_from_text(text, print_results):
+def extract_features_from_text(text):
     """
     This is the main function of the code detection module. It will split the text by lines and words for analyse.
 
     :param text: the text to operate on.
-    :param print_results: False by default, pass it True if you want to print results.
     :return: An object containing the number of characters in the text, the number of lines, the number of words and the data of all lines.
     """
     total_char = 0
@@ -121,14 +120,6 @@ def extract_features_from_text(text, print_results):
             "last_char": last_char,
             "words_data": words_data
         })
-        if print_results:
-            print("line_num:", total_lines, "\nline_length words:", line_length_by_words,
-                  "\nline_length char:", line_length_by_char, "\nfirst word:", first_word,
-                  "\nfirst char", first_char, "\nlast_word:", last_word, "\nlast_char", last_char,
-                  "\n==========================")
-
-    if print_results:
-        print("Total char:", total_char, "\nTotal words:", total_words, "\nTotal lines:", total_lines)
 
     return {
         'total_char': total_char,
@@ -138,12 +129,11 @@ def extract_features_from_text(text, print_results):
     }
 
 
-def binary_transformation(text_data, print_results):
+def binary_transformation(text_data):
     """
     This function will transform the text into 0 and 1. 0 if there is no code in a line else 1.
 
     :param text_data: The text data from the extraction of features.
-    :param print_results: False by default, pass it True if you want to print results.
     :return: the text transformed and a list of lines containing the value of each word (0 or 1).
     """
     binary_text = ''
@@ -169,18 +159,15 @@ def binary_transformation(text_data, print_results):
         binary_lines.append(binary_line)
         # Updating the string which represent the text
         binary_text += binary_line_value
-        if print_results:
-            print("Line num:", line['line_num'], "\nBinary line:", binary_line,
-                  "\n=======================")
+
     return binary_text, binary_lines
 
 
-def absolute_transformation(text_data, print_results):
+def absolute_transformation(text_data):
     """
     This function will transform the text into the number of code detected in a line.
 
     :param text_data: the text data from the extraction feature.
-    :param print_results: False by default, pass it True if you want to print results.
     :return: a list of lines containing the value of each word, depending of the number of features detected.
     """
     absolute_lines = []
@@ -203,10 +190,6 @@ def absolute_transformation(text_data, print_results):
             absolute_line_value += int(word_value)
         absolute_lines.append(absolute_line)
 
-        if print_results:
-            print("Line num:", line['line_num'], "\nAbsolute line:", absolute_line,
-                  "\nValue:", absolute_line_value, "\n=======================")
-
     return absolute_lines
 
 
@@ -219,7 +202,6 @@ def binary_code_percentage(binary_lines):
     """
     code_presence = 0
     words_nb = 0
-    percentage = None
 
     for line in binary_lines:
         words_nb += len(line)
@@ -230,7 +212,6 @@ def binary_code_percentage(binary_lines):
                 code_presence += 1
 
     percentage = (code_presence / words_nb) * 100
-    # print("Percentage", percentage)
     return percentage
 
 
@@ -252,28 +233,28 @@ def absolute_code_percentage(absolute_lines):
                 code_presence += int(char)
     if words_nb is not 0:
         percentage = (code_presence / words_nb) * 100
-    # print("Percentage", percentage)
     return percentage
 
 
-def run_all_detection(text, print_results=False):
+def execute_all_code_detection(text):
     """
     Launch all the detection analysis.
 
     :param text: the text to operate on.
-    :param print_results: False by default, pass it True if you want to print results.
-    :return: Nothing, the percentage (binary and absolute) of code is printed at the end of the analysis.
+    :return: Qn object which contain all the data of the code detection
     """
-    print("\nFeatures extraction\n=======================")
-    text_data = extract_features_from_text(text, print_results)
+    text_data = extract_features_from_text(text)
 
-    print("\nBinary and absolute data extraction\n=======================")
-    binary_data = binary_transformation(text_data, print_results)
-    absolute_lines = absolute_transformation(text_data, print_results)
+    binary_data = binary_transformation(text_data)
+    absolute_lines = absolute_transformation(text_data)
 
-    print("\nCode percentage calculation\n=======================")
     binary_percentage = binary_code_percentage(binary_data[1])
     absolute_percentage = absolute_code_percentage(absolute_lines)
 
-    print("binary_percentage:", binary_percentage)
-    print("absolute_percentage:", absolute_percentage)
+    return {
+        "text_data": text_data,
+        "binary_data": binary_data,
+        "absolute_data": absolute_lines,
+        "binary_percentage": binary_percentage,
+        "absolute_percentage": absolute_percentage
+    }

@@ -20,4 +20,4 @@ class TestCodeDetection(unittest.TestCase):
             """
 
     def test_run_code_detection(self):
-        code_detection.run_all_detection(self.text, False)
+        code_detection.execute_all_code_detection(self.text)
