@@ -8,6 +8,7 @@ Introduction
 The code detection module use two files: patterns.json and keywords.txt
 This module use ``re`` library for regular expression.
 The file patterns.json contain the regular expression patterns used for the following features which are synonyms of code.
+
 *NOTE : In pattern.json file \ need to be doubled else they are not detected.*
 
 +------------------------------------------------+------------------------------------------------------------+
@@ -99,17 +100,20 @@ If some keywords come to your mind, add them to the keywords.txt after a new lin
 
 Usage
 -----
+To use the code detection module:
 
-To use the module::
+.. code-block:: console
 
->>>import coast_core
->>>code_detection.function(to_use)
+    >>>import coast_core
+    >>>code_detection.function(to_use)
 
-or::
+or:
 
->>>import coast_core
->>>from coast_core import code_detection
->>>function(to_use)
+.. code-block:: console
+
+    >>>import coast_core
+    >>>from coast_core import code_detection
+    >>>function(to_use)
 
 Functions
 ---------

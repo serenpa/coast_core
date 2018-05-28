@@ -1,4 +1,4 @@
-ngram_extraction
+Ngram Extraction
 ================
 
 .. _n-grams:

@@ -9,37 +9,23 @@ Introduction
 Usage
 -----
 
-To use the module you can import 3 different tools *file*, *lang* and *measures*. Replace the *x* in the next commands by one of these keyword::
+To use the citations module:
 
->>>import coast_core
->>>x_utils.function(to_use)
+.. code-block:: console
 
-or::
+    >>>import coast_core
+    >>>utils.function(to_use)
 
->>>import coast_core
->>>from coast_core import x_utils
->>>function(to_use)
+or:
+.. code-block:: console
 
+    >>>from coast_core import utils
+    >>>function(to_use)
 
 Functions
 ---------
-**file_utils**
 
-.. automodule:: coast_core.file_utils
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-**lang_utils**
-
-.. automodule:: coast_core.lang_utils
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-**measures_utils**
-
-.. automodule:: coast_core.measures_utils
+.. automodule:: coast_core.utils
     :members:
     :undoc-members:
     :show-inheritance:
