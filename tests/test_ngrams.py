@@ -10,7 +10,7 @@ Tests for `ngrams` module.
 import os
 import unittest
 
-from coast_core import analyse_ngrams
+from coast_core import ngram_extraction
 
 
 class TestNgrams(unittest.TestCase):
@@ -22,5 +22,5 @@ class TestNgrams(unittest.TestCase):
         self.html = self.file.read()
 
     def test_generate_ngrams(self):
-        result = analyse_ngrams.generate_ngrams(self.html)
+        result = ngram_extraction.generate_ngrams(self.html)
         print(result)
