@@ -15,14 +15,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> extraction.function(to_use)
+    >>> coast_core.extraction.function(to_use)
 
 or:
 
 .. code-block:: console
 
     >>> from coast_core import extraction
-    >>> function(to_use)
+    >>> extraction.function(to_use)
 
 Functions
 ---------

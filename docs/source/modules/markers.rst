@@ -16,14 +16,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> markers.function(to_use)
+    >>> coast_core.markers.function(to_use)
 
 or:
 
 .. code-block:: console
 
     >>> from coast_core import markers
-    >>> function(to_use)
+    >>> markers.function(to_use)
 
 Functions
 ---------

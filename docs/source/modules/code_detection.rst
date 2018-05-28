@@ -45,14 +45,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> code_detection.function(to_use)
+    >>> coast_core.code_detection.function(to_use)
 
 or:
 
 .. code-block:: console
 
     >>> from coast_core import code_detection
-    >>> function(to_use)
+    >>> code_detection.function(to_use)
 
 Functions
 ---------

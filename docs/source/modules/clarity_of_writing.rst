@@ -14,14 +14,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> clarity_of_writing.function(to_use)
+    >>> coast_core.clarity_of_writing.function(to_use)
 
 or:
 
 .. code-block:: console
 
-    >>>from coast_core import clarity_of_writing
-    >>>function(to_use)
+    >>> from coast_core import clarity_of_writing
+    >>> clarity_of_writing.function(to_use)
 
 Functions
 ---------

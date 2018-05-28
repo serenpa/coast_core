@@ -14,7 +14,7 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> ngram_extraction.function(to_use)
+    >>> coast_core.ngram_extraction.function(to_use)
 
 
 or:
@@ -22,7 +22,7 @@ or:
 .. code-block:: console
 
     >>> from coast_core import ngram_extraction
-    >>> function(to_use)
+    >>> ngram_extraction.function(to_use)
 
 Functions
 ---------

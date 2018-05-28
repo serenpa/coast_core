@@ -15,13 +15,13 @@ To use the citations module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> utils.function(to_use)
+    >>> coast_core.utils.function(to_use)
 
 or:
 .. code-block:: console
 
     >>> from coast_core import utils
-    >>> function(to_use)
+    >>> utils.function(to_use)
 
 Functions
 ---------

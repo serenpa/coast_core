@@ -65,10 +65,10 @@ def select_external_citations(link, all_uris):
     external_uris = []
 
     for uri in all_uris:
-        uri_domain = get_an_articles_domain(uri)
-
-        if domain != uri_domain:
-            external_uris.append(uri)
+        if not uri.startswith('#') and not uri.startswith('/'):
+            uri_domain = get_an_articles_domain(uri)
+            if domain != uri_domain:
+                external_uris.append(uri)
 
     return external_uris
 

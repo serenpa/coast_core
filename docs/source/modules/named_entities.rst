@@ -18,14 +18,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> named_entities.function(to_use)
+    >>> coast_core.named_entities.function(to_use)
 
 or:
 
 .. code-block:: console
 
     >>> from coast_core import named_entities
-    >>> function(to_use)
+    >>> named_entities.function(to_use)
 
 Functions
 ---------

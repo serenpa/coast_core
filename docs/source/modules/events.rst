@@ -16,14 +16,14 @@ To use the module:
 .. code-block:: console
 
     >>> import coast_core
-    >>> events.function(to_use)
+    >>> coast_core.events.function(to_use)
 
 or:
 
 .. code-block:: console
 
     >>> from coast_core import events
-    >>> function(to_use)
+    >>> events.function(to_use)
 
 Functions
 ---------
