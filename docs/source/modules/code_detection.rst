@@ -8,6 +8,20 @@ Introduction
 The code detection module is used for identifying an extracting code examples within text. Regular expressions are used to identify the following
 features:
 
+Arrow functions
+^^^^^^^^^^^^^^^
++------------------------------------------------+--------------------------------------------------+
+| Regular expression                             | Example                                          |
++------------------------------------------------+--------------------------------------------------+
+| ``.(-|=)>.``                                   | ``Funct funct = ()->System.out.println("Hello")``|
++------------------------------------------------+--------------------------------------------------+
+
+
+
+
+
+
+
 * Arrow functions (`.(-|=)>.`). e.g. ``Funct funct = ()->System.out.println("Hello")``
 * Full stops that don't have a space either side (`\w\.\w`). e.g. ``my_list.append(a_value)``
 * Camel case (`[A-Z][a-z0-9]+[A-Z][a-z0-9]+*`). e.g. ``MyFirstClass(args)``
