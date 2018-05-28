@@ -17,13 +17,16 @@ Arrow functions
 +------------------------------------------------+--------------------------------------------------+
 
 
+Full stops that don't have a space either side
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++------------------------------------------------+--------------------------------------------------+
+| Regular expression                             | Example                                          |
++------------------------------------------------+--------------------------------------------------+
+| ``\w\.\w``                                     | ``my_list.append(a_value)``                      |
++------------------------------------------------+--------------------------------------------------+
 
 
 
-
-
-* Arrow functions (`.(-|=)>.`). e.g. ``Funct funct = ()->System.out.println("Hello")``
-* Full stops that don't have a space either side (`\w\.\w`). e.g. ``my_list.append(a_value)``
 * Camel case (`[A-Z][a-z0-9]+[A-Z][a-z0-9]+*`). e.g. ``MyFirstClass(args)``
 * Code comments (`\"\"\"|/(\*+)|//|\*+/|#|<!--|-->`). e.g. ``# Here is a Python comment``
 * Curly brackets (`{|}`). e.g. ``my_function(){...}``
