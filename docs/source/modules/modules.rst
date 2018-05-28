@@ -1,4 +1,4 @@
-coast_core
+COAST_CORE
 ==========
 
 .. toctree::
@@ -12,5 +12,4 @@ coast_core
    extraction
    markers
    named_entities
-   resources
    utils
