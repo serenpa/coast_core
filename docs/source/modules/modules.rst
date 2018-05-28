@@ -13,4 +13,5 @@ coast_core
    extraction
    markers
    named_entities
+   resources
    utils

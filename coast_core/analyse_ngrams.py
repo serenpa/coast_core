@@ -2,7 +2,7 @@
 A collection of functions that can be used for splitting the article into ngrams.
 """
 
-from coast_core import lang_utils as utils
+from coast_core import utils
 
 
 def generate_ngrams(article_text):

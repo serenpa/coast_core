@@ -3,7 +3,7 @@ A collection of functions that can be used for analysing the markers within resu
 """
 import string
 
-from coast_core import lang_utils as utils
+from coast_core import utils
 
 
 def analyse_set_of_markers_for_a_given_article(article_text, list_of_markers):

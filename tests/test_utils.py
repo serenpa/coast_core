@@ -10,7 +10,7 @@ Tests for `coast` module.
 import os
 import unittest
 
-from coast_core import file_utils as utils
+from coast_core import utils
 
 
 class TestFileUtils(unittest.TestCase):

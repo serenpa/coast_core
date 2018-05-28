@@ -13,7 +13,7 @@ except ImportError:
 from bs4 import BeautifulSoup
 import sys
 
-from coast_core import file_utils as utils
+from coast_core import utils
 
 
 def get_an_articles_domain(link):

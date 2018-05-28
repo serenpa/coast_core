@@ -13,7 +13,7 @@ import os
 import nltk
 from nltk.tag import StanfordNERTagger
 
-from coast_core import lang_utils as utils
+from coast_core import utils
 
 try:
     nltk.data.find('chunkers/maxent_ne_chunker')
