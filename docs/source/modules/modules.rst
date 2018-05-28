@@ -1,5 +1,5 @@
-COAST_CORE
-==========
+Modules
+=======
 
 .. toctree::
    :maxdepth: 4
