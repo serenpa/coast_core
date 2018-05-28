@@ -1,9 +1,6 @@
 """
-A collection of generic utility functions that are used throughout coast by various modules relating to NLP tasks.
-
-A collection of generic utility functions that are used throughout coast by various modules relating to the reporting and performance measures.
-
-A collection of generic utility functions that are used throughout coast by various modules relating to NLP tasks.
+A collection of generic utility functions that are used throughout coast by various modules relating to NLP tasks
+and the reporting and performance measures.
 """
 
 import sys
