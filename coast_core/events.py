@@ -10,6 +10,11 @@ try:
 except LookupError:
     nltk.download('averaged_perceptron_tagger')
 
+try:
+    nltk.data.find('taggers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 
 def get_timex_events(text):
     """

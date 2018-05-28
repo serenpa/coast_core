@@ -81,7 +81,7 @@ def full_extraction(url):
     Runs a complete end-to-end extraction using all other functions.
 
     :param url: The url to extract the HTML from
-    :return: The html extracted from the url
+    :return: An object that contain the HTML from the article
     """
     full_html = get_html(url)
     # pattern_extraction = pattern_article_extraction(url)

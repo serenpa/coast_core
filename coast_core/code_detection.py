@@ -241,7 +241,7 @@ def execute_all_code_detection(text):
     Launch all the detection analysis.
 
     :param text: the text to operate on.
-    :return: Qn object which contain all the data of the code detection
+    :return: An object which contain all the data of the code detection
     """
     text_data = extract_features_from_text(text)
 

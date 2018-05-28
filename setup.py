@@ -24,7 +24,8 @@ requirements = [
     'numpy',
     'textblob',
     'docopt',
-    'langdetect'
+    'langdetect',
+    'html5lib'
 ]
 
 setup_requirements = [

@@ -19,7 +19,6 @@ class TestClarityWriting(unittest.TestCase):
         self.link = "https://www.joelonsoftware.com/2006/09/01/language-wars/"
         self.file = open(os.path.dirname(__file__) + "/test_data/language_wars.html")
         self.html = self.file.read()
-        self.classification_config_file = os.path.dirname(__file__) + "/test_data/citations_classification.json"
 
     def test_execute(self):
         result = clarity_of_writing.execute_clarity_of_writing_check(self.html)

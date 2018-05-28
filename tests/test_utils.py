@@ -17,7 +17,7 @@ class TestFileUtils(unittest.TestCase):
 
     def setUp(self):
         self.file = os.path.dirname(__file__) + "/test_data/language_wars.html"
-        self.config_file = os.path.dirname(__file__) + "/test_data/config_file.json"
+        self.config_file = os.path.dirname(__file__) + "/../coast_core/resources/example/config_file.json"
 
     def test_get_from_file(self):
         result = utils.get_from_file(self.file)
