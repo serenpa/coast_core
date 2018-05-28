@@ -1,16 +1,15 @@
-coast_core
-==========
+Modules
+=======
 
 .. toctree::
    :maxdepth: 4
 
-   ngram_extraction
+   extraction
    citations
    clarity_of_writing
    code_detection
    events
-   extraction
    markers
    named_entities
-   resources
+   ngram_extraction
    utils
