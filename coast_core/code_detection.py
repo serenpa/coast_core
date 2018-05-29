@@ -81,31 +81,27 @@ def extract_features_from_text(text):
         try:
             first_word = words[0]
             last_word = words[line_length_by_words - 1]
-            first_char = first_word[0]
-            last_char = last_word[len(last_word) - 1]
-        except Exception as e:
-            first_word = str(e)
-            first_char = str(e)
-            last_word = str(e)
-            last_char = str(e)
+        except:
+            first_word = 'Line is empty'
+            last_word = ''
 
         position = 0
         for word in words:
-            word_data = []
+            word_data = None
             position += 1
             total_char += len(word) + 1
             features = feature_detection(word)
             if features:
-                word_data.append({
+                word_data = {
                     "word": word,
                     "position": position,
                     "features": features
-                })
+                }
             if not features:
-                word_data.append({
+                word_data = {
                     "word": word,
                     "position": position
-                })
+                }
 
             words_data.append(word_data)
         total_words += position
@@ -115,9 +111,7 @@ def extract_features_from_text(text):
             "line_length_by_words": line_length_by_words,
             "line_length_by_char": line_length_by_char,
             "first_word": first_word,
-            "first_char": first_char,
             "last_word": last_word,
-            "last_char": last_char,
             "words_data": words_data
         })
 
@@ -142,7 +136,7 @@ def binary_transformation(text_data):
     for line in text_data['lines_data']:
         binary_line = ''
         for word in line['words_data']:
-            word = word[0]
+
             # Default word value
             word_value = ''
             try:
@@ -176,7 +170,6 @@ def absolute_transformation(text_data):
         absolute_line = ''
         absolute_line_value = 0
         for word in line['words_data']:
-            word = word[0]
 
             # Default word value
             word_value = ''
