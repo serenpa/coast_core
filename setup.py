@@ -21,8 +21,7 @@ requirements = [
     "textblob",
     "langdetect",
     "urllib3",
-    "certifi",
-    "git+https://github.com/clips/pattern@ec95f97b2e34c2232e7c43ef1e34e3f0dea6654b"
+    "certifi"
 ]
 
 setup_requirements = [
