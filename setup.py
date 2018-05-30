@@ -12,20 +12,17 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    '3to2',
-    'RandomWords',
-    'google-api-python-client',
-    'urllib3',
-    'certifi',
-    'bs4',
-    'textstat',
-    'language_check',
-    'nltk',
-    'numpy',
-    'textblob',
-    'docopt',
-    'langdetect',
-    'html5lib'
+    "bs4",
+    "html5lib",
+    "urllib",
+    "textstat",
+    "nltk",
+    "language_check",
+    "textblob",
+    "langdetect",
+    "urllib3",
+    "certifi",
+    "git+https://github.com/clips/pattern@ec95f97b2e34c2232e7c43ef1e34e3f0dea6654b"
 ]
 
 setup_requirements = [
