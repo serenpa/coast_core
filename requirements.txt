@@ -1,6 +1,5 @@
 bs4
 html5lib
-urllib
 textstat
 nltk
 language_check
