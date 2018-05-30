@@ -14,7 +14,6 @@ with open('HISTORY.rst') as history_file:
 requirements = [
     "bs4",
     "html5lib",
-    "urllib",
     "textstat",
     "nltk",
     "language_check",
