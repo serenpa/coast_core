@@ -20,4 +20,5 @@ class TestCodeDetection(unittest.TestCase):
             """
 
     def test_run_code_detection(self):
-        code_detection.execute_all_code_detection(self.text)
+        cd = code_detection.execute_code_detection(self.text, 'LINES')
+        print(cd)

@@ -7,9 +7,9 @@ import re
 import os
 
 
-def feature_detection(word):
+def features_detection(word):
     """
-    This function will detect features in a word.
+    Detect features in a word. Features come from the pattern.json in the resources directory
 
     :param word: the word to operate on.
     :return: the list of features of a word.
@@ -28,7 +28,7 @@ def feature_detection(word):
                         features.append({
                             "type": type,
                             "match_num": match_num,
-                            "expression": match.group()
+                            "expression": word
                         })
     except Exception as e:
         print("\nError: ")
@@ -55,26 +55,49 @@ def feature_detection(word):
     return features
 
 
-def extract_features_from_text(text):
+def extract_text_data(text):
     """
-    This is the main function of the code detection module. It will split the text by lines and words for analyse.
+    Extract the data of the text : total of characters, total of words, total of lines
 
-    :param text: the text to operate on.
-    :return: An object containing the number of characters in the text, the number of lines, the number of words and the data of all lines.
+    :param text: The text to operate on
+    :return: an object containing th text data
     """
     total_char = 0
     total_words = 0
     total_lines = 0
 
-    lines_data = []
     lines = text.split('\n')
 
     for line in lines:
-
         total_lines += 1
-        words_data = []
         words = line.split()
+        for word in words:
+            total_words += 1
+            total_char += len(word)
+        total_char += len(words) - 1
 
+    return {
+        "total_char": total_char,
+        "total_words": total_words,
+        "total_lines": total_lines
+    }
+
+
+def extract_lines_data(text):
+    """
+    Extract the lines data from a text.
+
+    :param text: The text to operate on
+    :return: A list of lines objects
+    """
+    line_num = 0
+    lines_list = []
+
+    lines = text.split('\n')
+    for line in lines:
+        line_num += 1
+        words = line.split()
+        line_words = []
         line_length_by_words = len(words)
         line_length_by_char = sum(len(word) for word in words)
 
@@ -89,8 +112,7 @@ def extract_features_from_text(text):
         for word in words:
             word_data = None
             position += 1
-            total_char += len(word) + 1
-            features = feature_detection(word)
+            features = features_detection(word)
             if features:
                 word_data = {
                     "word": word,
@@ -103,75 +125,103 @@ def extract_features_from_text(text):
                     "position": position
                 }
 
-            words_data.append(word_data)
-        total_words += position
-
-        lines_data.append({
-            "line_num": total_lines,
+            line_words.append(word_data)
+        lines_list.append({
+            "line_num": line_num,
             "line_length_by_words": line_length_by_words,
             "line_length_by_char": line_length_by_char,
             "first_word": first_word,
             "last_word": last_word,
-            "words_data": words_data
+            "line_words": line_words
         })
 
-    return {
-        'total_char': total_char,
-        'total_lines': total_lines,
-        'total_words': total_words,
-        'lines_data': lines_data
-    }
+    return lines_list
 
 
-def binary_transformation(text_data):
+def extract_features_by_words(text):
     """
-    This function will transform the text into 0 and 1. 0 if there is no code in a line else 1.
+    Extract the features from words.
 
-    :param text_data: The text data from the extraction of features.
-    :return: the text transformed and a list of lines containing the value of each word (0 or 1).
+    :param text: The text to operate on
+    :return: A list of features objects
     """
-    binary_text = ''
-    binary_lines = []
+    features_by_words = []
+    words = text.split()
+    word_num = 0
+    for word in words:
+        word_features = features_detection(word)
+        for feature in word_features:
+            feature = {
+                "type": feature['type'],
+                "match_num": feature['match_num'],
+                "expression": feature['expression'],
+                "word_number": word_num
+            }
+            features_by_words.append(feature)
+        word_num += 1
 
-    for line in text_data['lines_data']:
-        binary_line = ''
-        for word in line['words_data']:
+    return features_by_words
 
-            # Default word value
+
+def extract_binary_data(lines_list):
+    """
+    Extract the binary data from lines.
+
+    :param lines_list: The list of line to operate on returned by the extract_lines_data function.
+    :return: An object containing the binary data of the lines.
+    """
+    binary_lines = ''
+    binary_list = []
+    binary_words = ''
+    for line in lines_list:
+        line_words = ''
+        for word in line['line_words']:
             word_value = ''
             try:
                 if word['features']:
                     word_value = '1'
             except:
                 word_value = '0'
-            binary_line += word_value
-        # Default binary line value
+            line_words += word_value
+
         binary_line_value = '0'
-        if '1' in binary_line:
+        if '1' in line_words:
             binary_line_value = '1'
-        # Updating the list of lines in the text
-        binary_lines.append(binary_line)
-        # Updating the string which represent the text
-        binary_text += binary_line_value
 
-    return binary_text, binary_lines
+        binary_list.append(line_words)
+        binary_words += line_words
+        binary_lines += binary_line_value
+
+    # Percentage by lines
+    total = len(binary_lines)
+    line_percentage = percentage(binary_lines, total)
+
+    # Percentage by words
+    total = len(binary_words)
+    word_percentage = percentage(binary_words, total)
+
+    binary_data = {
+        "lines": binary_lines,
+        "words": binary_words,
+        "lines_list": binary_list,
+        "line_percentage": line_percentage,
+        "word_percentage": word_percentage
+    }
+
+    return binary_data
 
 
-def absolute_transformation(text_data):
+def extract_absolute_data(lines_list):
     """
-    This function will transform the text into the number of code detected in a line.
+    Extract the absolute data from lines.
 
-    :param text_data: the text data from the extraction feature.
-    :return: a list of lines containing the value of each word, depending of the number of features detected.
+    :param lines_list: The list of line to operate on returned by the extract_lines_data function.
+    :return: An object containing the binary data of the lines.
     """
-    absolute_lines = []
+    words = ''
 
-    for line in text_data['lines_data']:
-        absolute_line = ''
-        absolute_line_value = 0
-        for word in line['words_data']:
-
-            # Default word value
+    for line in lines_list:
+        for word in line['line_words']:
             word_value = ''
 
             try:
@@ -179,75 +229,70 @@ def absolute_transformation(text_data):
                     word_value = str(len(word['features']))
             except:
                 word_value = '0'
-            absolute_line += word_value
-            absolute_line_value += int(word_value)
-        absolute_lines.append(absolute_line)
+            words += word_value
 
-    return absolute_lines
-
-
-def binary_code_percentage(binary_lines):
-    """
-    Will return the percentage of code in the binary lines by detecting 1.
-
-    :param binary_lines: The article's lines transformed by the binary transformation.
-    :return: the binary percentage of code in the text.
-    """
-    code_presence = 0
-    words_nb = 0
-
-    for line in binary_lines:
-        words_nb += len(line)
-        for i in range(0, len(line)):
-            if '0' in line:
-                pass
-            if '1' in line:
-                code_presence += 1
-
-    percentage = (code_presence / words_nb) * 100
-    return percentage
-
-
-def absolute_code_percentage(absolute_lines):
-    """
-    Will return the percentage of code in the binary lines by detecting anything else than 0 or None.
-
-    :param absolute_lines: The article's lines transformed by the absolute transformation.
-    :return: the absolute percentage of code in the text.
-    """
-    code_presence = 0
-    words_nb = 0
-    percentage = None
-
-    for line in absolute_lines:
-        words_nb += len(line)
-        for i, char in enumerate(line):
-            if char is not '0' and not None:
-                code_presence += int(char)
-    if words_nb is not 0:
-        percentage = (code_presence / words_nb) * 100
-    return percentage
-
-
-def execute_all_code_detection(text):
-    """
-    Launch all the detection analysis.
-
-    :param text: the text to operate on.
-    :return: An object which contain all the data of the code detection
-    """
-    text_data = extract_features_from_text(text)
-
-    binary_data = binary_transformation(text_data)
-    absolute_lines = absolute_transformation(text_data)
-
-    binary_percentage = binary_code_percentage(binary_data[1])
-    absolute_percentage = absolute_code_percentage(absolute_lines)
-
-    return {
-        "text_data": text_data,
-        "binary_data": binary_data,
-        "absolute_data": absolute_lines,
-        "binary_percentage": binary_percentage,
-        "absolute_percentage": absolute_percentage
+    total = len(words)
+    word_percentage = percentage(words, total)
+    absolute_data = {
+        "words": words,
+        "word_percentage": word_percentage
     }
+
+    return absolute_data
+
+
+def percentage(string, total):
+    """
+    Calculate the percentage of code in an string.
+    :param string: The string to operate on
+    :param total: The total depending on what you base your percentage
+    :return: The percentage of code in the string
+    """
+    code_presence = 0
+    percentage = 0
+    for i in range(0, total):
+        if string[i] is not '0' or None:
+            code_presence += int(string[i])
+    if code_presence is not 0:
+        percentage = (code_presence / total) * 100
+
+    return percentage
+
+
+def execute_code_detection(text, granularity='ALL'):
+    """
+    Execute all the function of code detection analysis. You can choose what to return.
+        * ALL will return all the data we can get. This is the default value.
+        * BASIC will return the binary and the absolute data.
+        * FEATURES will return the detected features in the text
+        * LINES will return the lines data.
+
+    :param text: The text to operate on
+    :param granularity: Will affect the returned data : ALL BASIC FEATURES LINES
+    :return: The return will depend of the granularity
+    """
+    text_data = extract_text_data(text)
+    lines = extract_lines_data(text)
+    binary_classification = extract_binary_data(lines)
+    absolute_classification = extract_absolute_data(lines)
+    features_by_words = extract_features_by_words(text)
+
+    if granularity is 'ALL':
+        return {
+            "text_data": text_data,
+            "lines": lines,
+            "binary_classification": binary_classification,
+            "absolute_classification": absolute_classification,
+            "features_by_words": features_by_words
+        }
+
+    if granularity is 'BASIC':
+        return {
+            "binary_classification": binary_classification,
+            "absolute_classification": absolute_classification
+        }
+    if granularity is 'FEATURES':
+        return features_by_words
+
+    if granularity is 'LINES':
+        return lines
