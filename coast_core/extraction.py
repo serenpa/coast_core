@@ -87,6 +87,6 @@ def full_extraction(url):
     pattern_extraction = pattern_article_extraction(url)
 
     return {
-        "html": full_html#,
+        "html": full_html,
         "pattern_extraction": pattern_extraction
     }
