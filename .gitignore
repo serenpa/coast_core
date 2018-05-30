@@ -1,3 +1,12 @@
+### Ash Added
+
+# Editor
+.idea/
+.editorconfig
+
+### End of Ash adds
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
