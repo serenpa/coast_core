@@ -4,7 +4,7 @@ A collection of functions that can be used for extracting information from the r
 import urllib3
 import certifi
 import sys
-from pattern.web import URL, plaintext, GET
+# from pattern.web import URL, plaintext, GET
 
 
 def get_html(url):
@@ -42,38 +42,38 @@ def get_html(url):
         return "-1: " + str(e)
 
 
-def pattern_article_extraction(uri):
-    """
-        Extract the article using Pattern. Pattern uses the url, not the HTML
-        Add to the articles_pattern collection.
-
-        Args:
-            uri: The url to extract the HTML from
-
-    """
-    try:
-        url = URL(uri, method=GET)
-        r = url.download(unicode=True)
-        content_string = str(r.decode('utf-8'))  # default is utf-8
-
-        content_string = content_string.strip()
-        content_string = content_string.replace("\n", "")
-        content_string = content_string.replace("\t", "")
-        content_string = content_string.replace("\r", "")
-
-        extracted_text = plaintext(content_string)
-        extracted_html = plaintext(content_string, keep={"h1": [], "h2": [], "strong": [], "a": ["href"]})
-
-        # print(type(extracted_html))
-        return {
-            "extracted_text": extracted_text,
-            "extracted_html": extracted_html,
-            "mime_type": url.mimetype
-        }
-
-    except Exception as e:
-        sys.stdout.write(str(e))
-        return e
+# def pattern_article_extraction(uri):
+#     """
+#         Extract the article using Pattern. Pattern uses the url, not the HTML
+#         Add to the articles_pattern collection.
+#
+#         Args:
+#             uri: The url to extract the HTML from
+#
+#     """
+#     try:
+#         url = URL(uri, method=GET)
+#         r = url.download(unicode=True)
+#         content_string = str(r.decode('utf-8'))  # default is utf-8
+#
+#         content_string = content_string.strip()
+#         content_string = content_string.replace("\n", "")
+#         content_string = content_string.replace("\t", "")
+#         content_string = content_string.replace("\r", "")
+#
+#         extracted_text = plaintext(content_string)
+#         extracted_html = plaintext(content_string, keep={"h1": [], "h2": [], "strong": [], "a": ["href"]})
+#
+#         # print(type(extracted_html))
+#         return {
+#             "extracted_text": extracted_text,
+#             "extracted_html": extracted_html,
+#             "mime_type": url.mimetype
+#         }
+#
+#     except Exception as e:
+#         sys.stdout.write(str(e))
+#         return e
 
 
 def full_extraction(url):
@@ -84,9 +84,9 @@ def full_extraction(url):
     :return: An object that contain the HTML from the article
     """
     full_html = get_html(url)
-    pattern_extraction = pattern_article_extraction(url)
+    # pattern_extraction = pattern_article_extraction(url)
 
     return {
-        "html": full_html,
-        "pattern_extraction": pattern_extraction
+        "html": full_html#,
+        # "pattern_extraction": pattern_extraction
     }
