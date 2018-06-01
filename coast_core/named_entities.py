@@ -86,6 +86,8 @@ def get_nltk_named_entities(text, exception_list=[]):
     :param exception_list: A list of named entities to ignore.
     :return: A list of named entities.
     """
+    utils.import_punkt()
+
     global nltk_named_ents
     nltk_named_ents = []
 
