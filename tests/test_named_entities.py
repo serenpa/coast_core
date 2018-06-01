@@ -19,8 +19,6 @@ class TestNamedEntities(unittest.TestCase):
         self.link = "https://www.joelonsoftware.com/2006/09/01/language-wars/"
         self.file = open(os.path.dirname(__file__) + "/test_data/language_wars.html")
         self.html = self.file.read()
-        import nltk
-        nltk.download('punkt')
 
     def test_extract_all(self):
         result = named_entities.extract_all_named_entities(self.html)
