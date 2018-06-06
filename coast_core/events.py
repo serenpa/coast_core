@@ -1,7 +1,7 @@
 """
 Extract event instances from text.
 """
-from coast_core.resources.external_libs import timex
+from coast_core.external_libs import timex
 from coast_core import utils
 import nltk
 
