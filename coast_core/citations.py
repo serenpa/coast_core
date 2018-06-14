@@ -80,9 +80,11 @@ def classify_citations(external_uris, classification_config_file):
 
     For example, given the following JSON:
 
-    {
-      "research": ["reseaerchgate", "ieee.", "dx.doi.", "acm", "sciencedirect"]
-    }
+    .. code-block:: JSON
+
+      {
+        "research": ["reseaerchgate", "ieee.", "dx.doi.", "acm", "sciencedirect"]
+      }
 
     All citations that contain any sub-string within the list will be classified as 'research' citations. A
     more detailed JSON example can be found in our test_data: https://github.com/zedrem/coast_core/blob/master/tests/test_data/citations_classification.json

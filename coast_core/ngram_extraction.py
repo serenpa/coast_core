@@ -12,14 +12,16 @@ def generate_ngrams(article_text):
     :param article_text: the block of text to operate on.
     :return: An object containing all ngrams up to 6 in the following structure:
 
-        {
-            "unigrams": [list of unigrams],
-            "bigrams": [list of bigrams],
-            "trigrams": [list of trigrams],
-            "fourgrams": [list of fourgrams],
-            "fivegrams": [list of fivegrams],
-            "sixgrams": [list of sixgrams]
-        }
+        .. code-block:: python
+
+          {
+              "unigrams": [list of unigrams],
+              "bigrams": [list of bigrams],
+              "trigrams": [list of trigrams],
+              "fourgrams": [list of fourgrams],
+              "fivegrams": [list of fivegrams],
+              "sixgrams": [list of sixgrams]
+          }
 
     """
 
