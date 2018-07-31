@@ -7,5 +7,5 @@ textblob
 langdetect
 urllib3
 certifi
+https://github.com/clips/pattern/tarball/master#egg=pattern
 sphinx_rtd_theme
-pattern3
