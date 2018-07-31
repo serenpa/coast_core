@@ -20,7 +20,8 @@ requirements = [
     "textblob",
     "langdetect",
     "urllib3",
-    "certifi"
+    "certifi",
+    "pattern"
 ]
 
 setup_requirements = [
@@ -29,12 +30,18 @@ setup_requirements = [
 test_requirements = [
 ]
 
+dependency_links=[
+    "https://github.com/clips/pattern/tarball/master#egg=pattern"
+]
+
 setup(
     author="Ashley Williams",
     author_email='ashley.williams@pg.canterbury.ac.nz',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
@@ -56,4 +63,5 @@ setup(
     url='https://github.com/zedrem/coast_core',
     version='0.1.0',
     zip_safe=False,
+    dependency_links=dependency_links
 )

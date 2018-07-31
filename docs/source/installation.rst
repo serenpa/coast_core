@@ -46,6 +46,12 @@ Once you have a copy of the source, you can install it with:
 
     $ python setup.py install
 
+Note: you may need to ensure that your setuptools version is greater than 12. You can upgrade with the following:
+
+.. code-block:: console
+
+    $ pip install --upgrade setuptools
+
 
 .. _Github repo: https://github.com/zedrem/coast_core
 .. _tarball: https://github.com/zedrem/coast_core/tarball/master

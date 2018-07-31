@@ -8,3 +8,4 @@ langdetect
 urllib3
 certifi
 sphinx_rtd_theme
+pattern3
