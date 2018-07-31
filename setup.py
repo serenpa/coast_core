@@ -12,6 +12,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
+    "six>=1.11.0",
     "bs4",
     "html5lib",
     "textstat",
