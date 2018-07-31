@@ -8,8 +8,9 @@ python:
   - "pypy3"
 # commands to install dependencies
 install:
-  - "pip install . --process-dependency-links"
-  - "pip install -r requirements.txt"
+  - "python setup.py install"
+#   - "pip install . --process-dependency-links"
+#   - "pip install -r requirements.txt"
 #   # Needed to get six >=1.11.0 on Travis
 #   - "pip uninstall -y six"
 #   - "pip install six>=1.11.0"
