@@ -23,6 +23,7 @@ requirements = [
     "urllib3",
     "certifi",
     "pattern"
+    "requests"
 ]
 
 setup_requirements = [
