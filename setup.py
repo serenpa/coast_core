@@ -22,7 +22,7 @@ requirements = [
     "langdetect",
     "urllib3",
     "certifi",
-    "pattern"
+    "pattern",
     "requests"
 ]
 
