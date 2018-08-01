@@ -13,6 +13,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     "six",
+    "numpy",
     "bs4",
     "html5lib",
     "textstat",
@@ -23,8 +24,7 @@ requirements = [
     "urllib3",
     "certifi",
     "pattern",
-    "requests",
-    "numpy"
+    "requests"
 ]
 
 setup_requirements = [

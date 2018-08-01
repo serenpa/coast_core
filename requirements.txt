@@ -1,4 +1,5 @@
 six
+numpy
 bs4
 html5lib
 textstat
@@ -11,4 +12,3 @@ certifi
 https://github.com/clips/pattern/tarball/master#egg=pattern
 requests
 sphinx_rtd_theme
-numpy
