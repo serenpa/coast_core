@@ -8,6 +8,7 @@ python:
   - "pypy3"
 # commands to install dependencies
 install:
+  - "python -m pip install --upgrade pip"
   - "python setup.py install"
 #   - "pip install . --process-dependency-links"
 #   - "pip install -r requirements.txt"
