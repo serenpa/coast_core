@@ -1,3 +1,4 @@
+six
 bs4
 html5lib
 textstat
