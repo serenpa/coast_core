@@ -11,3 +11,4 @@ certifi
 https://github.com/clips/pattern/tarball/master#egg=pattern
 requests
 sphinx_rtd_theme
+numpy
