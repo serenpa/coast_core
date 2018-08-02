@@ -1,8 +1,7 @@
 """
 Extract event instances from text.
 """
-# from coast_core.external_libs import timex
-from coast_core import timex
+
 from coast_core import utils
 import nltk
 import re
@@ -26,7 +25,7 @@ def get_timex_events(text):
     :param text:  The text to operate on
     :return: return the timex events
     """
-    timex_events = timex.tag(text)
+    timex_events = timex_tag(text)
     return timex_events
 
 
