@@ -50,7 +50,7 @@ Installation
 
 To install COAST_CORE, run this command in your terminal:
 
-** WARNING: Currently coast_core only works if you install from source. This is due to pip install not processing dependency links. This will be fixed for the next release. **
+**WARNING: Currently coast_core only works if you install from source. This is due to pip install not processing dependency links. This will be fixed for the next release.**
 
 .. code-block:: console
 
