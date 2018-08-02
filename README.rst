@@ -38,7 +38,7 @@ COAST_CORE is made up of several modules for:
 
 Prerequisites
 -------------
-The tool is built in Python 3 and tested in versions 3.3, 3.4, 3.5, 3.6 and pypy3.
+The tool is built in Python 3 and tested in versions 3.5 and 3.6.
 
 There are two methods of named entity detection included as part of COAST_CORE. For
 running the Stanford named entity detection, you will need Java_ installed.

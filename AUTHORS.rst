@@ -10,7 +10,7 @@ Maintainer
 Contributors
 ------------
 
-* Yann Le Norment  <yann.lenorment@canterbury.ac.nz>
+* Yann Le Norment
 * Adrien Aucher
 
 Want to contribute? See: CONTRIBUTING.rst
