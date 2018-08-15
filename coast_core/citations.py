@@ -43,7 +43,9 @@ def get_all_citations(html):
 
     try:
         for uri in soup.find_all("a"):
-            all_uris.append(uri.get("href"))
+            href = uri.get("href")
+            if href:
+                all_uris.append(href)
     except Exception as e:
         sys.stdout.write(e)
         return None
