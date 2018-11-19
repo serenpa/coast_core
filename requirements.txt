@@ -6,8 +6,4 @@ nltk
 language_check
 textblob
 langdetect
-urllib3
-certifi
-https://github.com/clips/pattern/tarball/master#egg=pattern
-requests
 sphinx_rtd_theme

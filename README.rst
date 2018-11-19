@@ -32,7 +32,6 @@ COAST_CORE is made up of several modules for:
 * `Clarity of writing assessment <https://coast-core.readthedocs.io/en/latest/modules/clarity_of_writing.html>`_
 * `Code detection <https://coast-core.readthedocs.io/en/latest/modules/code_detection.html>`_
 * `Event detection <https://coast-core.readthedocs.io/en/latest/modules/events.html>`_
-* `Article extraction <https://coast-core.readthedocs.io/en/latest/modules/extraction.html>`_
 * `Keyword detection <https://coast-core.readthedocs.io/en/latest/modules/markers.html>`_
 * `Named entity detection <https://coast-core.readthedocs.io/en/latest/modules/named_entities.html>`_
 

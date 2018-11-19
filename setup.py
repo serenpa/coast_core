@@ -19,11 +19,7 @@ requirements = [
     "nltk",
     "language_check",
     "textblob",
-    "langdetect",
-    "urllib3",
-    "certifi",
-    "pattern",
-    "requests"
+    "langdetect"
 ]
 
 setup_requirements = [
