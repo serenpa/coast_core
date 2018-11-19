@@ -67,9 +67,11 @@ def select_external_citations(link, all_uris):
     external_uris = []
 
     for uri in all_uris:
-        if not uri.startswith('#') and not uri.startswith('/'):
+        uri = uri.lower() 
+        #if not uri.startswith('#') and not uri.startswith('/') and not uri.startswith('mailto:') and not uri.startswith('.'): #old
+        if uri.startswith("http"): #new
             uri_domain = get_an_articles_domain(uri)
-            if domain != uri_domain:
+            if uri_domain.strip() != "" and domain != uri_domain and len(uri_domain) >= 3: # its only a citation if it has a domain and the domain is not the current sites domain and domain should be more than three characters a.b
                 external_uris.append(uri)
 
     return external_uris
@@ -110,7 +112,7 @@ def classify_citations(external_uris, classification_config_file):
             for pattern in patterns:
                 pattern = str(pattern)
                 # print(pattern, uri_domain)
-                if pattern in uri_domain:
+                if pattern in uri:                  #now looking for full uri instead of just domain
                     uri_classifications.append((key.upper(), pattern))
         # print(uri_classifications)
 
