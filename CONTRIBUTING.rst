@@ -35,8 +35,8 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-coast could always use more documentation, whether
-as part of the official coast docs, in docstrings,
+coast_core could always use more documentation, whether
+as part of the official coast_core docs, in docstrings,
 or even on the web in blog posts, articles, and such.
 
 Submit Feedback
