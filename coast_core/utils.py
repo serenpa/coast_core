@@ -10,7 +10,7 @@ from nltk.util import ngrams
 from nltk import word_tokenize
 
 
-def get_from_file(filename):
+def get_from_file(path):
     """
     Reads a file and returns each line as a list of strings.
     Notes:
@@ -18,10 +18,10 @@ def get_from_file(filename):
     1. All double quotes are replaced with single quotes.
     2. New line characters are removed.
 
-    :param filename: The path to the file you wish to read.
+    :param path: The path to the file you wish to read.
     :return: A list of strings, where each string is a line in the file.
     """
-    ifile = open(filename)
+    ifile = open(path)
     lines = ifile.readlines()
     ifile.close()
 
@@ -32,15 +32,15 @@ def get_from_file(filename):
     return res
 
 
-def get_json_from_file(filename):
+def get_json_from_file(path):
     """
     Reads a JSON file and returns as an object.
-    :param filename: The path to the JSON file you wish to read.
+    :param path: The path to the JSON file you wish to read.
     :return: A JSON object, generated from the contents of the file.
     :return: In the event of an error, the error is printed to the stdout.
     """
     try:
-        with open(filename) as ifile:
+        with open(path) as ifile:
             res = json.load(ifile)
             return res
     except Exception as e:

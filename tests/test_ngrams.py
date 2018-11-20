@@ -24,3 +24,6 @@ class TestNgrams(unittest.TestCase):
     def test_generate_ngrams(self):
         result = ngram_extraction.generate_ngrams(self.html)
         print(result)
+
+    def tearDown(self):
+        self.file.close()

@@ -11,6 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
+# TODO check if sphinx_rtd_them is needed for requirements
 requirements = [
     "six",
     "bs4",
