@@ -19,9 +19,7 @@ requirements = [
     "nltk",
     "language_check",
     "textblob",
-    "langdetect",
-    "nltk.taggers.averaged_perceptron_tagger",
-    "nltk.tokenize.punkt"
+    "langdetect"
 ]
 
 setup_requirements = [
