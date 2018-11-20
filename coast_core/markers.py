@@ -52,8 +52,8 @@ def run_all_markers(article_text, config_file):
     Runs a complete end-to-end analysis of markers using all other functions.
 
     :param article_text: The text to search.
-    :param config_file: A JSON file containing all relevant information for conducting the analysis. The config file should be structured as shown in the test data: https://github.com/zedrem/coast_core/blob/master/tests/test_data/config_file.json.
-     Each specific marker file should then be structured as shown in: https://github.com/zedrem/coast_core/blob/master/tests/test_data/markers_experience_9.json.  
+    :param config_file: A JSON file containing all relevant information for conducting the analysis. The config file should be structured as shown in the test data: https://github.com/zedrem/coast_core/blob/master/coast_core/resources/example/config_file.json.
+     Each specific marker file should then be structured as shown in: https://github.com/zedrem/coast_core/blob/master/coast_core/resources/example/markers_experience_9.json.
 
     :return: An object containing all markers found
     """

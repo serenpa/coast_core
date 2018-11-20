@@ -99,8 +99,7 @@ def run_all_event_analysis(article_text):
         "verb_events": verbs,
         "iverb_bigrams": iverbs
     }
-    
-    
+
 
 def timex_tag(text, **kwargs):
     """
@@ -111,10 +110,10 @@ def timex_tag(text, **kwargs):
                  given. In which case, returns a markedup string.
         
     """
-    returnFormat = ""
-    
+    return_format = ""
+
     ## End Args ##
-    
+
     # Predefined strings.
     numbers = "(^a(?=\s)|one|two|three|four|five|six|seven|eight|nine|ten| \
               eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen| \
@@ -153,10 +152,8 @@ def timex_tag(text, **kwargs):
     reg8 = re.compile(day, re.IGNORECASE)
     reg9 = re.compile(wordyear, re.IGNORECASE)
     reg10 = re.compile(temporal_phrases, re.IGNORECASE)
-    
-    
-    
-    returnFormat = kwargs.get('returnFormat', None)
+
+    return_format = kwargs.get('return_format', None)
 
     text = text.lower()
 
@@ -223,7 +220,7 @@ def timex_tag(text, **kwargs):
     for timex in found:
         timex_found.append(timex)
 
-    if returnFormat == "markup":
+    if return_format == "markup":
 
         # Tag only temporal expressions which haven't been tagged.
         for timex in timex_found:
@@ -232,4 +229,3 @@ def timex_tag(text, **kwargs):
         return text
     else:
         return timex_found
-

@@ -91,7 +91,7 @@ def classify_citations(external_uris, classification_config_file):
       }
 
     All citations that contain any sub-string within the list will be classified as 'research' citations. A
-    more detailed JSON example can be found in our test_data: https://github.com/zedrem/coast_core/blob/master/tests/test_data/citations_classification.json
+    more detailed JSON example can be found in our test_data: https://github.com/zedrem/coast_core/blob/master/coast_core/resources/data/citations_classification.json
 
     :param external_uris: A list of uris to classify.
     :param classification_config_file: A config file containing all classifications.

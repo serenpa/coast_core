@@ -244,19 +244,20 @@ def extract_absolute_data(lines_list):
 def percentage(string, total):
     """
     Calculate the percentage of code in an string.
+
     :param string: The string to operate on
     :param total: The total depending on what you base your percentage
     :return: The percentage of code in the string
     """
     code_presence = 0
-    percentage = 0
+    code_percentage = 0
     for i in range(0, total):
         if string[i] is not '0' or None:
             code_presence += int(string[i])
     if code_presence is not 0:
-        percentage = (code_presence / total) * 100
+        code_percentage = (code_presence / total) * 100
 
-    return percentage
+    return code_percentage
 
 
 def execute_code_detection(text, granularity='ALL'):
