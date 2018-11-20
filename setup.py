@@ -11,7 +11,6 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-# TODO check if sphinx_rtd_them is needed for requirements
 requirements = [
     "six",
     "bs4",
@@ -20,7 +19,9 @@ requirements = [
     "nltk",
     "language_check",
     "textblob",
-    "langdetect"
+    "langdetect",
+    "nltk.taggers.averaged_perceptron_tagger",
+    "nltk.tokenize.punkt"
 ]
 
 setup_requirements = [

@@ -35,7 +35,7 @@ def get_all_citations(html):
 
     :param html: The html to operate on.
 
-    :return: A list of all URI's found in the article.
+    :return: A list of all URI's in lowercase form found in the article.
     """
     soup = BeautifulSoup(html, "html5lib")
 
@@ -45,7 +45,7 @@ def get_all_citations(html):
         for uri in soup.find_all("a"):
             href = uri.get("href")
             if href:
-                all_uris.append(href)
+                all_uris.append(href.lower())
     except Exception as e:
         sys.stdout.write(e)
         return None
