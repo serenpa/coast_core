@@ -35,7 +35,7 @@ setup(
     author="Ashley Williams",
     author_email='ashley.williams@pg.canterbury.ac.nz',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
