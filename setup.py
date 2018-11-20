@@ -28,8 +28,7 @@ setup_requirements = [
 test_requirements = [
 ]
 
-dependency_links=[
-    "https://github.com/clips/pattern/tarball/master#egg=pattern"
+dependency_links = [
 ]
 
 setup(
