@@ -13,6 +13,7 @@ import unittest
 from coast_core import ngram_extraction
 
 
+@unittest.skip("Not implemented yet")
 class TestNgrams(unittest.TestCase):
 
     def setUp(self):
@@ -20,10 +21,3 @@ class TestNgrams(unittest.TestCase):
         self.link = "https://www.joelonsoftware.com/2006/09/01/language-wars/"
         self.file = open(os.path.dirname(__file__) + "/test_data/language_wars.html")
         self.html = self.file.read()
-
-    def test_generate_ngrams(self):
-        result = ngram_extraction.generate_ngrams(self.html)
-        print(result)
-
-    def tearDown(self):
-        self.file.close()

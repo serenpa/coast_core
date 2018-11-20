@@ -168,5 +168,4 @@ class TestEvents(unittest.TestCase):
                                            ('developing', 'VBG'),
                                            ('<', 'VB'),
                                            ('>', 'VB')]}
-        # print(result)
         self.assertEqual(result, expected_result)
