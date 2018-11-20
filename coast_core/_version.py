@@ -37,8 +37,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "coast-"
-    cfg.versionfile_source = "coast/_version.py"
+    cfg.parentdir_prefix = "coast_core-"
+    cfg.versionfile_source = "coast_core/_version.py"
     cfg.verbose = False
     return cfg
 
