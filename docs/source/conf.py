@@ -163,8 +163,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'coast_core', 'coast_core Documentation',
-     author, 'coast_core', 'One line description of project.',
-     'Miscellaneous'),
+     author, 'coast_core', 'COAST_CORE is a tool designed for aiding the credibility assessment of online articles. It is a collection of modules that are useful for assessing various aspects of credibility.',
+     'Analysis'),
 ]
 
 
