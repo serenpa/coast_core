@@ -4,6 +4,7 @@ A collection of functions that can be used for splitting the article into ngrams
 
 from coast_core import utils
 from collections import defaultdict
+import string
 
 try:
     from nltk.corpus import stopwords
@@ -51,6 +52,17 @@ def generate_ngrams(article_text):
     }
 
 
+def _preprocess_text(text):
+    """
+    Removes punctuation and converts a string to lowercase
+    :param text: input text to preprocess
+    :return: string which has no punctuation and is lower case
+    """
+    exclude = set(string.punctuation)
+    no_punctuation = ''.join(ch for ch in text if ch not in exclude)
+    return no_punctuation.lower()
+
+
 def calculate_ngram_frequency_count(article_text, ngram_size, stop_list=None):
     """
     Calculate the frequency of occurances for a given ngram based on an article test
@@ -61,15 +73,17 @@ def calculate_ngram_frequency_count(article_text, ngram_size, stop_list=None):
     """
 
     if stop_list is None:
-        stop_list = set(stopwords.words('english'))
-    else:
-        stop_list = set(stop_list)
+        stop_list = stopwords.words('english')
 
-    ngrams = utils.get_ngrams(article_text, ngram_size)
+    stop_set = set([_preprocess_text(x) for x in stop_list])
+    preprocessed_article_text = _preprocess_text(article_text)
+
+    ngrams = utils.get_ngrams(preprocessed_article_text, ngram_size)
     ngram_frequency_count = defaultdict(int)
+
     for ngram in ngrams:
         ngram_set = set(ngram)
-        intersection = ngram_set.intersection(stop_list)
+        intersection = ngram_set.intersection(stop_set)
         ngram_in_stop_list = len(intersection) > 0
 
         if not ngram_in_stop_list:
