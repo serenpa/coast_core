@@ -4,7 +4,14 @@ A collection of functions that can be used for splitting the article into ngrams
 
 from coast_core import utils
 from collections import defaultdict
-from nltk.corpus import stopwords
+
+try:
+    from nltk.corpus import stopwords
+except ImportError:
+    import nltk
+
+    nltk.download('stopwords')
+    from nltk.corpus import stopwords
 
 
 def generate_ngrams(article_text):
@@ -44,18 +51,29 @@ def generate_ngrams(article_text):
     }
 
 
-def calculate_ngram_frequency_count(article_text, ngram, stop_list=[]):
+def calculate_ngram_frequency_count(article_text, ngram_size, stop_list=None):
     """
     Calculate the frequency of occurances for a given ngram based on an article test
     :param article_text: the block of text to operate on.
-    :param ngram: the degree of ngmram to be returned (eg 3 would be a tri gram)
-    :param stop_list: list of words to be excluded
-    :return: An object containing the frequency count of the n grams
+    :param ngram_size: the degree of ngmram to be returned (eg 3 would be a tri gram)
+    :param stop_list: list of words to be excluded from the frequency count
+    :return: An object containing the frequency count of the n grams without ngrams included in the stop list
     """
-    ngrams = utils.get_ngrams(article_text, ngram)
+
+    if stop_list is None:
+        stop_list = set(stopwords.words('english'))
+    else:
+        stop_list = set(stop_list)
+
+    ngrams = utils.get_ngrams(article_text, ngram_size)
     ngram_frequency_count = defaultdict(int)
-    for gram in ngrams:
-        ngram_frequency_count[gram] += 1
+    for ngram in ngrams:
+        ngram_set = set(ngram)
+        intersection = ngram_set.intersection(stop_list)
+        ngram_in_stop_list = len(intersection) > 0
+
+        if not ngram_in_stop_list:
+            ngram_frequency_count[ngram] += 1
 
     frequency_count = list(ngram_frequency_count.items())
     return {

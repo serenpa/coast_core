@@ -28,3 +28,12 @@ class TestNgrams(unittest.TestCase):
 
         expected_count = [(('AM',), 1), (('I',), 3)]
         self.assertEqual(expected_count, sorted_frequencies)
+
+    def test_ngram_frequency_with_stop_words(self):
+        stop_words = ["I"]
+        article = "I I I am well"
+        frequency_count = ngram_extraction.calculate_ngram_frequency_count(article, 2, stop_words)
+        sorted_frequencies = sorted(frequency_count["frequency_count"], key=lambda args: args[1])
+
+        expected_count = [(('am', 'well',), 1)]
+        self.assertEqual(expected_count, sorted_frequencies)
