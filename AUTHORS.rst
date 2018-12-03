@@ -10,6 +10,7 @@ Maintainer
 Contributors
 ------------
 
+* Stefan Hall
 * Yann Le Norment
 * Adrien Aucher
 
