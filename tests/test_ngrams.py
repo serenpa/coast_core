@@ -13,7 +13,6 @@ import unittest
 from coast_core import ngram_extraction
 
 
-@unittest.skip("Not implemented yet")
 class TestNgrams(unittest.TestCase):
 
     def setUp(self):
@@ -21,3 +20,11 @@ class TestNgrams(unittest.TestCase):
         self.link = "https://www.joelonsoftware.com/2006/09/01/language-wars/"
         self.file = open(os.path.dirname(__file__) + "/test_data/language_wars.html")
         self.html = self.file.read()
+
+    def test_ngram_frequency(self):
+        article = "I I I AM "
+        frequency_count = ngram_extraction.calculate_ngram_frequency_count(article, 1)
+        sorted_frequencies = sorted(frequency_count["frequency_count"], key=lambda args: args[1])
+
+        expected_count = [(('AM',), 1), (('I',), 3)]
+        self.assertEqual(expected_count, sorted_frequencies)

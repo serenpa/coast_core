@@ -3,6 +3,8 @@ A collection of functions that can be used for splitting the article into ngrams
 """
 
 from coast_core import utils
+from collections import defaultdict
+from nltk.corpus import stopwords
 
 
 def generate_ngrams(article_text):
@@ -39,4 +41,23 @@ def generate_ngrams(article_text):
         "fourgrams": fourgrams,
         "fivegrams": fivegrams,
         "sixgrams": sixgrams
+    }
+
+
+def calculate_ngram_frequency_count(article_text, ngram, stop_list=[]):
+    """
+    Calculate the frequency of occurances for a given ngram based on an article test
+    :param article_text: the block of text to operate on.
+    :param ngram: the degree of ngmram to be returned (eg 3 would be a tri gram)
+    :param stop_list: list of words to be excluded
+    :return: An object containing the frequency count of the n grams
+    """
+    ngrams = utils.get_ngrams(article_text, ngram)
+    ngram_frequency_count = defaultdict(int)
+    for gram in ngrams:
+        ngram_frequency_count[gram] += 1
+
+    frequency_count = list(ngram_frequency_count.items())
+    return {
+        "frequency_count": frequency_count
     }
