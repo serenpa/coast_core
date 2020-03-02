@@ -6,8 +6,8 @@ COAST_CORE
 .. image:: https://img.shields.io/pypi/v/coast_core.svg
         :target: https://pypi.python.org/pypi/coast_core
 
-.. image:: https://img.shields.io/travis/ash-williams/coast_core.svg
-        :target: https://travis-ci.org/ash-williams/coast_core
+.. image:: https://img.shields.io/travis/serenpa/coast_core.svg
+        :target: https://travis-ci.org/serenpa/coast_core
 
 .. image:: https://readthedocs.org/projects/coast-core/badge/?version=latest
         :target: https://coast-core.readthedocs.io/en/latest/?badge=latest
